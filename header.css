@@ -1,83 +1,86 @@
-
 /*This is css for header*/
 
-h1{
-background-color: rgba(86, 236, 247,0.4);
-margin-top: 0;
-padding: 0;
-max-height: 55px;
-height: 100%;
+html, body {
+    /* To allow page to stick to the edges */
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply style to header instead of h1 */
+/* h1 is a full line block, not a good idea to style that */
+header {
+    background-color: rgba(86, 236, 247, 0.4);
+    margin: 0;
+	max-height: 55px;
+    height: 100%;
+    padding: 10px 0px;
 }
 
 /*Home Logo*/
-.logo{
-    border-radius: 50%;
+.logo {
+	border-radius: 50%;
 }
 
-/*Search*/
-.search{
-    position: absolute;
-    right: 33%;
-    top: 1%;
+/* Search Bar container */
+.search {
+    /* Make sure its inline */
+    display: inline-block;
     background: rgba(20, 111, 197, 0.6);
-    max-width: 550px;
-    width: 100%;
-    padding: 10px 8px;
-    border-radius: 5px;
-    display: flex;
-    justify-content:space-between;
-    margin-left: auto;
-    margin-right: auto;
-    margin: auto;
+    /* Absolute positioning is positioned relative to the nearest positioned ancestor (in this case, the logo) */
+    position: absolute;
+    padding: 7px 7px;
+    width: 600px; /* Set constant width for easier positioning*/
+    left:50%; /* Push the container over 50% of the screen */
+    margin-left: -300px; /* Center the element by giving it negative margin of half of element width */
 }
 
-.search .input {
-    width: 85%;
-    padding: 9px 75px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
+.input {
+    width: 300px;
+	padding: 9px 75px;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
 }
 
 /*User profile*/
-.userIcon{
-    position: absolute;
-    right: 0%;
-    border: none;
-    top: 1%;
-    display: inline-block;
+.userIcon {
+	position: absolute;
+	right: 0%;
+	border: none;
+	top: 1%;
+	display: inline-block;
 }
 
 .dropdwn {
-    color: rgb(39, 168, 39);
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 10%;
-  }
-
-.dropdwn_content{
-    display: none;
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    min-width: 160px;
-    border-radius: 5px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+	color: rgb(39, 168, 39);
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 10%;
 }
 
-.dropdwn_content a{
-    color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.dropdwn_content {
+	display: none;
+	position: absolute;
+	background-color: rgb(255, 255, 255);
+	min-width: 160px;
+	border-radius: 5px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
 
-.dropdwn_content a:hover
-{
-    background-color:rgba(224, 206, 206, 0.7);
+.dropdwn_content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
-.userIcon:hover .dropdwn_content{
-    display: block;
-    right: 1%;
+.dropdwn_content a:hover {
+	background-color: rgba(224, 206, 206, 0.7);
 }
+
+.userIcon:hover .dropdwn_content {
+	display: block;
+	right: 1%;
+}
+
