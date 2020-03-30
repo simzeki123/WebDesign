@@ -1,0 +1,79 @@
+<div class="popupBox" id="signUpContainer">
+	<form action="/index.html" id="signupForm">
+		<img
+			src="misc/XButton.gif"
+			alt="Close Button"
+			id="closeSignupBtn"
+			class="closePopupBtn"
+		/>
+		<img
+			src="misc/login_logo.gif"
+			alt="Sign Up Logo"
+			id="signupLogo"
+			class="popupLogo"
+		/>
+		<br />
+		<div>
+			<b>Welcome! New fella.</b>
+		</div>
+		<br />
+		<div>
+			<input
+				autocomplete="off"
+				type="text"
+				name="usrname"
+				id="newuser_usrname"
+				placeholder="Username"
+				required
+			/>
+			<div class="inputFieldUnderline"></div>
+		</div>
+		<br />
+		<div>
+			<input
+				type="email"
+				name="emailAddr"
+				id="newuser_emailAddr"
+				placeholder="E-mail Address"
+				required
+			/>
+			<div class="inputFieldUnderline"></div>
+		</div>
+		<br />
+
+		<div>
+			<input
+				type="password"
+				name="pass"
+				id="newuser_pass"
+				placeholder="Password"
+				required
+			/>
+			<div class="inputFieldUnderline"></div>
+		</div>
+		<br />
+		<div>
+			<input
+				type="password"
+				name="confirmPass"
+				id="newuser_confirmPass"
+				placeholder="Comfirm Password"
+				required
+			/>
+			<div class="inputFieldUnderline"></div>
+		</div>
+		<br />
+		<div>
+			<input
+				class="roundBtn"
+				type="submit"
+				value="Register"
+				id="registerBtn"
+			/>
+		</div>
+		<br />
+		<div style="padding-bottom: 20px;">
+			<a style="text-decoration: underline;cursor:pointer;" id="alreadMemberLink">Already Member? </a>
+		</div>
+	</form>
+</div>

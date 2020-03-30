@@ -1,0 +1,52 @@
+<!-- Login Box hidden element -->
+<div class="popupBox" id="loginContainer">
+	<form id="loginForm" action="memberaccount.html" method="get">
+		<img
+			src="misc/XButton.gif"
+			alt="Close Button"
+			id="closeLoginBtn"
+			class="closePopupBtn"
+		/>
+		<img
+			src="misc/login_logo.gif"
+			alt="Login Logo"
+			id="loginLogo"
+			class="popupLogo"
+		/>
+		<br />
+		<div>
+			<b>Welcome Back !</b>
+		</div>
+		<br />
+		<div>
+			<input
+				autocomplete="off"
+				type="text"
+				name="usrname"
+				id="usrname"
+				placeholder="Username"
+				required
+			/>
+			<div class="inputFieldUnderline"></div>
+		</div>
+		<br />
+		<div>
+			<input
+				type="password"
+				name="pass"
+				id="pass"
+				placeholder="Password"
+				required
+			/>
+			<div class="inputFieldUnderline"></div>
+		</div>
+		<br />
+		<div>
+			<input class="roundBtn" type="submit" value="Login" id="loginBtn" />
+		</div>
+		<br />
+		<div style="padding-bottom: 20px;">
+			<a style="text-decoration: underline; cursor: pointer;" id="forgetPasswordLink">Forget password ? </a>
+		</div>
+	</form>
+</div>

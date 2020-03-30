@@ -1,0 +1,19 @@
+.item {
+	grid-area: item;
+}
+
+.item-r {
+	grid-area: itemr;
+}
+
+.item-l {
+	grid-area: iteml;
+}
+
+.grid-container {
+	display: grid;
+	grid-row-gap: 50px;
+	grid-template-areas:
+		"iteml itemr itemr"
+		"item item item";
+}
