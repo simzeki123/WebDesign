@@ -1,7 +1,8 @@
-.item {
-	grid-area: item;
+* {
+	font-family: sans-serif;
 }
 
+/* Container styling */
 .item-r {
 	grid-area: itemr;
 }
@@ -12,8 +13,39 @@
 
 .grid-container {
 	display: grid;
-	grid-row-gap: 50px;
-	grid-template-areas:
-		"iteml itemr itemr"
-		"item item item";
+	/* grid-row-gap: 5; */
+	grid-template-areas: "iteml itemr";
+}
+
+/* Edit Icon styling */
+[class^="icon"] {
+	width: 20px;
+	height: 20px;
+	position: relative;
+}
+
+.icon-edit {
+	left: 5px;
+}
+
+.editBtn {
+	display: inline-block;
+	/* https://codepen.io/sosuke/pen/Pjoqqp */
+	filter: invert(9%) sepia(99%) saturate(6107%) hue-rotate(247deg)
+		brightness(100%) contrast(146%);
+}
+
+.editBtn:hover {
+	cursor: pointer;
+}
+
+/* Sub Header styling */
+.subHeader {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.subHeaderContent {
+	padding: 10px 10px;
 }

@@ -8,19 +8,48 @@
 	</head>
 	<body>
 		<div class="grid-container">
-            <div class="item-l">
-                Hi, XXX
-                <br>
-                This is your profile page
+            <!-- For profile infos -->
+			<div class="item-l">
+				Hi, XXX
+				<br />
+				This is your profile page
+				<br />
+				<div class="subHeader">Full Name</div>
+				<div class="editBtn" id="editFullName">
+					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
+					<span style="padding-left: 5px;">Edit</span>
+				</div>
+				<div class="subHeaderContent" id="fullName">XXX</div>
+				<div class="subHeader">Delivery Address</div>
+				<div class="editBtn" id="editAddress">
+					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
+					<span style="padding-left: 5px;">Edit</span>
+				</div>
+				<div class="subHeaderContent" id="deliveryAddr">XXX</div>
+				<div class="subHeader">Preferred payment method</div>
+				<div id="paymentMeth" class="subHeaderContent">
+					<input type="radio" name="paymentMethod" id="dbCards" />
+					<label for="dbCards">Debit/Credit Card</label>
+					<input
+						type="radio"
+						name="paymentMethod"
+						id="3rdPartyService"
+					/>
+					<label for="3rdPartyService"
+						>3rd Party Payment service</label
+					>
+				</div>
+				<div class="subHeader">Contact No:</div>
+				<div class="editBtn" id="editContact">
+					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
+					<span style="padding-left: 5px;">Edit</span>
+				</div>
+				<div class="subHeaderContent" id="contactNo">XXX-XXX XXXX</div>
+				<br />
+				<button id="save" disabled>Save changes</button>
             </div>
-            <div class="item-r">
-
-            </div>
-            <div class="item">
-                
-            </div>
-        </div>
-        
-
+            <!-- For chart and graphs -->
+			<div class="item-r"></div>
+		</div>
 	</body>
 </html>
