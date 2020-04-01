@@ -8,27 +8,45 @@
 	</head>
 	<body>
 		<div class="grid-container">
-            <!-- For profile infos -->
+			<!-- For profile infos -->
 			<div class="item-l">
 				Hi, XXX
 				<br />
 				This is your profile page
 				<br />
+				<!-- Full Name -->
 				<div class="subHeader">Full Name</div>
 				<div class="editBtn" id="editFullName">
 					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
 					<span style="padding-left: 5px;">Edit</span>
 				</div>
-				<div class="subHeaderContent" id="fullName">XXX</div>
+				<div class="subHeaderContent" id="fullName">
+					<div style="display:inline-block">
+						<input type="text" />
+						<br />
+						<div
+							style="font-size: 10px;text-align: right;padding-top:5px;"
+						>
+							Press Shift + Enter to save
+						</div>
+					</div>
+				</div>
+				<!-- Delivery Addr -->
 				<div class="subHeader">Delivery Address</div>
 				<div class="editBtn" id="editAddress">
 					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
 					<span style="padding-left: 5px;">Edit</span>
 				</div>
 				<div class="subHeaderContent" id="deliveryAddr">XXX</div>
+				<!-- Preferred Payment method -->
 				<div class="subHeader">Preferred payment method</div>
 				<div id="paymentMeth" class="subHeaderContent">
-					<input type="radio" name="paymentMethod" id="dbCards" />
+					<!-- <input
+						type="radio"
+						name="paymentMethod"
+						id="dbCards"
+						class="radio radio-primary"
+					/>
 					<label for="dbCards">Debit/Credit Card</label>
 					<input
 						type="radio"
@@ -37,8 +55,23 @@
 					/>
 					<label for="3rdPartyService"
 						>3rd Party Payment service</label
-					>
+                    > -->
+					<div class="radioBtnContainer">
+						<input type="radio" name="paymentMethod" id="dbCards" />
+						<label for="dbCards">Debit/Credit Card</label>
+					</div>
+					<div class="radioBtnContainer">
+						<input
+							type="radio"
+							name="paymentMethod"
+							id="3rdPartyService"
+						/>
+						<label for="3rdPartyService"
+							>3rd Party Payment service</label
+						>
+					</div>
 				</div>
+				<!-- Contact No -->
 				<div class="subHeader">Contact No:</div>
 				<div class="editBtn" id="editContact">
 					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
@@ -47,8 +80,8 @@
 				<div class="subHeaderContent" id="contactNo">XXX-XXX XXXX</div>
 				<br />
 				<button id="save" disabled>Save changes</button>
-            </div>
-            <!-- For chart and graphs -->
+			</div>
+			<!-- For chart and graphs -->
 			<div class="item-r"></div>
 		</div>
 	</body>

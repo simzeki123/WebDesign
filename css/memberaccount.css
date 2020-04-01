@@ -49,3 +49,56 @@
 .subHeaderContent {
 	padding: 10px 10px;
 }
+
+input[type="text"] {
+	border-radius: 5px;
+	outline: none;
+	padding: 5px 8px;
+}
+
+input[type="text"]:focus {
+	border: 2px solid red;
+}
+
+/* Custom radio buttons */
+.radioBtnContainer {
+	display: inline-block;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"] + label {
+	cursor: pointer;
+}
+
+input[type="radio"] + label::before {
+	display: inline-block;
+	box-sizing: border-box;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+
+	margin-right: 5px;
+
+	text-align: center;
+	content: "";
+	color: white;
+	border: 1px solid red;
+}
+
+input[type="radio"]:checked + label::before {
+	background-color: chartreuse;
+	transition: all 0.3s ease;
+}
+
+input[type="radio"]:checked:hover + label::before {
+    transition: none;
+    background-color: chartreuse;
+}
+
+input[type="radio"]:hover + label::before {
+	background-color: rgba(127, 255, 0, 0.3);
+	transition: none;
+}
