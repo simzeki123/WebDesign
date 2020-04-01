@@ -1,0 +1,70 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+/*Globel Footer*/
+footer a{
+    text-decoration: none;
+}
+
+footer{
+    background-color:rgba(158, 154, 154, 0.7);
+    margin: 0px;
+    border: none;
+    padding: 10px 0px;
+    height: 150px;
+}
+
+footer > *{
+    display: inline-block;
+}
+
+/* Footer links */
+.footer_links{
+    padding: 5px 50px;
+    margin-left: -25px;
+    list-style-type: none;
+    font-weight:bold;
+    font-style: italic;
+    position: absolute;
+}
+
+.footer_links>li{
+    font-size: 1.3em;
+}
+
+.footer_links>li>:link{
+    color: rgba(156, 139, 151,0.8);
+}
+
+.footer_links>li>:visited{
+    color: rgb(156, 40, 118)
+}
+
+.footer_links>li>:hover{
+    color: rgb(192, 91, 158);
+}
+
+.footer_links>li>:active{
+    color: green;   
+}
+
+/*Company name at footer*/
+
+.footer_com_name{
+    
+    left: 38%;
+    position: absolute;
+    top: 10px;
+    padding :7px 7px;
+    font-size: 3em;
+}
+
+.footer_com_motto{
+    left: 45%;
+    position: absolute;
+    top: 60px;
+    padding :7px 7px;
+    font-size: 1.8em;
+}
