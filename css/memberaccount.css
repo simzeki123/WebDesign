@@ -2,19 +2,26 @@
 	font-family: sans-serif;
 }
 
-/* Container styling */
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Page Container styling */
 .item-r {
-	grid-area: itemr;
+    grid-area: itemr;
 }
 
 .item-l {
-	grid-area: iteml;
+    grid-area: iteml;
 }
 
-.grid-container {
+.page-container {
 	display: grid;
-	/* grid-row-gap: 5; */
-	grid-template-areas: "iteml itemr";
+    grid-template-areas: "iteml itemr";
+    grid-template-columns: 50% 50%;
+	padding: 20px;
 }
 
 /* Edit Icon styling */
@@ -43,6 +50,7 @@
 .subHeader {
 	display: inline-block;
 	font-weight: bold;
+	line-height: 50px;
 	font-size: 20px;
 }
 
@@ -50,19 +58,29 @@
 	padding: 10px 10px;
 }
 
+/* Input Styling */
+.input-container {
+    display: inline-block; /* use inline-block to prevent div block taking full-width*/
+    width: 50%;
+}
+
 input[type="text"] {
+    width: 100%; /* Parent of input is input-container so its fine */
 	border-radius: 5px;
 	outline: none;
+	border: 2px solid rgb(150, 150, 150);
 	padding: 5px 8px;
 }
 
 input[type="text"]:focus {
-	border: 2px solid red;
+	border: 2px solid rgb(237, 20, 91);
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Custom radio buttons */
 .radioBtnContainer {
 	display: inline-block;
+	padding-right: 20px;
 }
 
 input[type="radio"] {
@@ -77,8 +95,8 @@ input[type="radio"] + label::before {
 	display: inline-block;
 	box-sizing: border-box;
 	border-radius: 50%;
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 16px;
 
 	margin-right: 5px;
 
@@ -89,16 +107,14 @@ input[type="radio"] + label::before {
 }
 
 input[type="radio"]:checked + label::before {
-	background-color: chartreuse;
+	background-color: red;
 	transition: all 0.3s ease;
 }
 
 input[type="radio"]:checked:hover + label::before {
-    transition: none;
-    background-color: chartreuse;
+	background-color: red;
 }
 
 input[type="radio"]:hover + label::before {
-	background-color: rgba(127, 255, 0, 0.3);
-	transition: none;
+	background-color: rgba(255, 0, 0, 0.3);
 }
