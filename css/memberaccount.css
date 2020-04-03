@@ -1,3 +1,17 @@
+@keyframes fade-in {
+	from {
+		opacity: 0%;
+	}
+	to {
+		opacity: 100%;
+	}
+}
+
+.fade-me-in {
+    animation-name: fade-in;
+    animation-duration: .3s;
+}
+
 * {
 	font-family: sans-serif;
 }
@@ -10,17 +24,17 @@ body {
 
 /* Page Container styling */
 .item-r {
-    grid-area: itemr;
+	grid-area: itemr;
 }
 
 .item-l {
-    grid-area: iteml;
+	grid-area: iteml;
 }
 
 .page-container {
 	display: grid;
-    grid-template-areas: "iteml itemr";
-    grid-template-columns: 50% 50%;
+	grid-template-areas: "iteml itemr";
+	grid-template-columns: 50% 50%;
 	padding: 20px;
 }
 
@@ -60,14 +74,14 @@ body {
 
 /* Input Styling */
 .input-container {
-    display: inline-block; /* use inline-block to prevent div block taking full-width*/
-    width: 50%;
-    padding-bottom: 5px;
+	display: inline-block; /* use inline-block to prevent div block taking full-width*/
+	width: 50%;
+	padding-bottom: 5px;
 }
 
 input[type="text"] {
-    box-sizing: border-box;
-    width: 100%; /* Parent of input is input-container so its fine */
+	box-sizing: border-box;
+	width: 100%; /* Parent of input is input-container so its fine */
 	border-radius: 5px;
 	outline: none;
 	border: 2px solid rgb(150, 150, 150);
