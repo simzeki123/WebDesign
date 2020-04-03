@@ -10,7 +10,7 @@
 		<div class="page-container">
 			<!-- For profile infos -->
 			<div class="item-l">
-				Hi, XXX
+				Hi, <span id="nameInWelcomeMsg">XXX</span>
 				<br />
 				This is your profile page
 				<br />
@@ -22,14 +22,21 @@
 				</div>
 				<div class="subHeaderContent" id="fullName">
 					<div class="input-container">
-						<input type="text" value="" id="fullNameInput" onkeyup="inputFunc(event)" />
+						<input
+							type="text"
+							value=""
+							id="fullNameInput"
+							onkeyup="fullname_inputFunc(event)"
+						/>
 						<br />
 						<div
 							style="font-size: 10px;
                             text-align: right;
                             padding-top:5px;"
 						>
-							Press Shift + Enter to save
+                            Press Shift + Enter to save
+                            <br>
+                            Press ESC to discard changes
 						</div>
 					</div>
 				</div>
@@ -41,36 +48,72 @@
 				</div>
 				<div class="subHeaderContent" id="deliveryAddr">
 					<div class="input-container">
-						<input type="text" placeholder="Address line 1" />
+						<input
+							type="text"
+							id="inp_addr1"
+							value=""
+							placeholder="Address line 1"
+							onkeyup="addr_inputFunc(event)"
+						/>
 					</div>
-                    <br>
+					<br />
 					<div class="input-container">
-						<input type="text" placeholder="Address line 2" />
+						<input
+							type="text"
+							id="inp_addr2"
+							value=""
+							placeholder="Address line 2 (Optional)"
+							onkeyup="addr_inputFunc(event)"
+						/>
+                    </div>
+                    <br />
+					<div class="input-container">
+						<input
+							type="text"
+							id="inp_addr3"
+							value=""
+							placeholder="City"
+							onkeyup="addr_inputFunc(event)"
+						/>
 					</div>
-                    <br>
+					<br />
 					<div class="input-container">
-						<input type="text" placeholder="State" />
+						<input
+							type="text"
+							id="inp_addr4"
+							value=""
+							placeholder="State"
+							onkeyup="addr_inputFunc(event)"
+						/>
 					</div>
-                    <br>
+					<br />
 					<div class="input-container">
-						<input type="text" placeholder="City" />
-					</div>
-                    <br>
-					<div class="input-container">
-						<input type="text" placeholder="Zip Code" />
+						<input
+							type="text"
+							id="inp_addr5"
+							value=""
+							placeholder="Zip Code"
+							onkeyup="addr_inputFunc(event)"
+						/>
 						<br />
 						<div
 							style="font-size: 10px;
                             text-align: right;
                             padding-top:5px;"
 						>
-							Press Shift + Enter to save
+                            Press Shift + Enter to save
+                            <br>
+                            Press ESC to discard changes
 						</div>
 					</div>
 				</div>
 				<!-- Preferred Payment method -->
 				<div class="subHeader">Preferred payment method</div>
 				<div id="paymentMeth" class="subHeaderContent">
+					<div class="radioBtnContainer">
+						<input type="radio" name="paymentMethod" id="prompt" />
+						<label for="prompt">Prompt on payment</label>
+					</div>
 					<div class="radioBtnContainer">
 						<input type="radio" name="paymentMethod" id="dbCards" />
 						<label for="dbCards">Debit/Credit Card</label>
@@ -94,14 +137,16 @@
 				</div>
 				<div class="subHeaderContent" id="contactNo">
 					<div class="input-container">
-						<input type="text" />
+						<input id="inp_contact" type="text" value="" placeholder="Contact No" onkeyup="contact_inputFunc(event)"/>
 						<br />
 						<div
 							style="font-size: 10px;
                             text-align: right;
                             padding-top:5px;"
 						>
-							Press Shift + Enter to save
+                            Press Shift + Enter to save
+                            <br>
+                            Press ESC to discard changes
 						</div>
 					</div>
 				</div>
@@ -113,7 +158,7 @@
 				2nd div block
 			</div>
 		</div>
-    </body>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/memberaccount.js"></script>
+	</body>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/memberaccount.js"></script>
 </html>
