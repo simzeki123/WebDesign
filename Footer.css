@@ -12,22 +12,23 @@ footer{
     background-color:rgba(158, 154, 154, 0.7);
     margin: 0px;
     border: none;
-    padding: 10px 0px;
-    height: 150px;
-}
-
-footer > *{
-    display: inline-block;
+    padding:0px;
+    height: 250px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 /* Footer links */
 .footer_links{
-    padding: 5px 50px;
-    margin-left: -25px;
+    display: grid;
     list-style-type: none;
+    margin: 0;
     font-weight:bold;
     font-style: italic;
-    position: absolute;
+    font-size: 1.5em;
+    background-color: coral;
+    grid-auto-rows: 40px;
+    align-self: center;
 }
 
 .footer_links>li{
@@ -50,21 +51,43 @@ footer > *{
     color: green;   
 }
 
-/*Company name at footer*/
+/*Company name and motto*/
+.footer_title_grid{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: center;
+}
 
-.footer_com_name{
-    
-    left: 38%;
-    position: absolute;
-    top: 10px;
+.footer_com_name{ 
+    display: grid;
+    align-self:center;
     padding :7px 7px;
     font-size: 3em;
+    background-color: lawngreen;
+    grid-column: 1/3;
+    margin: 0;
 }
 
 .footer_com_motto{
-    left: 45%;
-    position: absolute;
-    top: 60px;
-    padding :7px 7px;
+    display: grid;
     font-size: 1.8em;
+    background-color: rgb(118, 118, 189);
+    margin: 0;
+    align-self:top;
+    grid-column : 1/3;
+}
+
+/*Contact us footer*/
+
+.footer_contacts>ul>li{
+    list-style-type: none;
+}
+
+.footer_contacts{
+    background-color: cyan;
+    margin: 0;
+}
+
+.footer_contacts > p{
+margin: 0;
 }
