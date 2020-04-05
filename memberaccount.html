@@ -72,7 +72,7 @@
 							type="text"
 							id="inp_addr3"
 							value=""
-							placeholder="City"
+							placeholder="Zip Code"
 							onkeyup="addr_inputFunc(event)"
 						/>
 					</div>
@@ -82,7 +82,7 @@
 							type="text"
 							id="inp_addr4"
 							value=""
-							placeholder="State"
+							placeholder="City"
 							onkeyup="addr_inputFunc(event)"
 						/>
 					</div>
@@ -92,7 +92,7 @@
 							type="text"
 							id="inp_addr5"
 							value=""
-							placeholder="Zip Code"
+							placeholder="State"
 							onkeyup="addr_inputFunc(event)"
 						/>
 						<br />
@@ -111,7 +111,7 @@
 				<div class="subHeader">Preferred payment method</div>
 				<div id="paymentMeth" class="subHeaderContent fade-me-in">
 					<div class="radioBtnContainer">
-						<input type="radio" name="paymentMethod" id="prompt" />
+						<input type="radio" name="paymentMethod" id="prompt" checked/>
 						<label for="prompt">Prompt on payment</label>
 					</div>
 					<div class="radioBtnContainer">
@@ -151,11 +151,11 @@
 					</div>
 				</div>
 				<br />
-				<button id="save" disabled>Save changes</button>
+				<button id="save" disabled onclick="saveButton_event()">Save changes</button>
 			</div>
 			<!-- For chart and graphs -->
 			<div class="item-r">
-				2nd div block
+				Maybe something like member profile card or smth
 			</div>
 		</div>
 	</body>

@@ -12,12 +12,12 @@ var entityMap = {
 	"'": "&#39;",
 	"/": "&#x2F;",
 	"`": "&#x60;",
-	"=": "&#x3D;"
+	"=": "&#x3D;",
 };
 
 // replace html special chars with their respective char code
 function escapeHtml(string) {
-	return String(string).replace(/[&<>"'`=\/]/g, function(s) {
+	return String(string).replace(/[&<>"'`=\/]/g, function (s) {
 		return entityMap[s];
 	});
 }
@@ -32,7 +32,7 @@ function escapeHtml(string) {
 // Global var
 var editingStatus = { name: false, addr: false, contact: false }; // to keep track of what is being edited
 var html_oldName, html_oldAddr, html_oldContact; // to keep old records
-$(document).ready(function() {
+$(document).ready(function () {
 	// ==========
 	// Init page
 	// ==========
@@ -53,12 +53,14 @@ $(document).ready(function() {
         `
 	);
 	$("#contactNo").html("XXX-XXX XXXX");
+	// ==========
+	// ==========
 
 	// ===================
 	// on click functions
 	// ===================
 	// Full Name
-	$("#editFullName").on("click", function() {
+	$("#editFullName").on("click", function () {
 		// state check
 		if (editingStatus.name) {
 			return;
@@ -74,13 +76,11 @@ $(document).ready(function() {
 			)
 		);
 		// focus on full name input field and select all
-		$("#fullNameInput")
-			.focus()
-			.select();
+		$("#fullNameInput").focus().select();
 	});
 
 	// Delivery Address
-	$("#editAddress").on("click", function() {
+	$("#editAddress").on("click", function () {
 		// state check
 		if (editingStatus.addr) {
 			return;
@@ -94,7 +94,7 @@ $(document).ready(function() {
 			$("#view_addr2").html(),
 			$("#view_addr3").html(),
 			$("#view_addr4").html(),
-			$("#view_addr5").html()
+			$("#view_addr5").html(),
 		];
 		// replace the current value with input fields
 		$("#deliveryAddr").html(deliveryAddrEditMode);
@@ -103,13 +103,11 @@ $(document).ready(function() {
 		$("#inp_addr3").val(addr[2]);
 		$("#inp_addr4").val(addr[3]);
 		$("#inp_addr5").val(addr[4]);
-		$("#inp_addr1")
-			.focus()
-			.select();
+		$("#inp_addr1").focus().select();
 	});
 
 	// Contact No
-	$("#editContact").on("click", function() {
+	$("#editContact").on("click", function () {
 		// state check
 		if (editingStatus.contact) {
 			return;
@@ -124,19 +122,30 @@ $(document).ready(function() {
 				'value="' + escapeHtml($("#contactNo").html()) + '"'
 			)
 		);
-		$("#inp_contact")
-			.focus()
-			.select();
+		$("#inp_contact").focus().select();
 	});
 	// ===================
 	// ===================
+
+	// ===================
+	// On change events
+	// ===================
+	// radio buttons on change
+	$('input[type="radio"][name="paymentMethod"]').on("change", function () {
+		$("#save").removeAttr("disabled");
+	});
+
+	// ===================
+	// ===================
 });
+// ======================================
+// ======================================
 
 // ===============
-// Functions
+// Event Functions
 // ===============
 // this function will be called during onkeyup of full name input to check for Shift + Enter
-const fullname_inputFunc = event => {
+const fullname_inputFunc = (event) => {
 	// if enter key is pressed
 	if (event.keyCode == 13) {
 		if (event.shiftKey) {
@@ -149,6 +158,7 @@ const fullname_inputFunc = event => {
 			$("#fullName").html(escapeHtml($("#fullNameInput").val()));
 
 			editingStatus.name = false; // state update
+			$("#save").removeAttr("disabled");
 		}
 	} else if (event.key == "Escape") {
 		// if ESC is pressed
@@ -159,7 +169,7 @@ const fullname_inputFunc = event => {
 };
 
 // to detect Shift + Enter for address
-const addr_inputFunc = event => {
+const addr_inputFunc = (event) => {
 	// if enter key is pressed
 	if (event.keyCode == 13) {
 		if (event.shiftKey) {
@@ -169,21 +179,29 @@ const addr_inputFunc = event => {
 				escapeHtml($("#inp_addr2").val()),
 				escapeHtml($("#inp_addr3").val()),
 				escapeHtml($("#inp_addr4").val()),
-				escapeHtml($("#inp_addr5").val())
+				escapeHtml($("#inp_addr5").val()),
 			];
 
+			var foundEmptyAddr = false;
 			// map .length to inputValues and check each element and make sure no length is 0
 			inputValues
-				.map(function(e) {
+				.map(function (e) {
 					return e.length;
 				})
-				.forEach(function(item, index) {
+				.forEach(function (item, index) {
 					// skip index 1 as it is Address Line 2 (optional)
-					if (index != 1 && item == 0) {
-						alert("Empty address is not allowed");
-						return;
+					if (index != 1 && item == 0 && !foundEmptyAddr) {
+                        alert("Empty address is not allowed");
+                        $("#inp_addr" + (index+1).toString()).select().focus();
+						foundEmptyAddr = true;
 					}
 				});
+			if (foundEmptyAddr) return;
+			// Make sure zip code is integer
+			if (!Number.isInteger(inputValues[2]) && inputValues[2].length > 5) {
+                alert("Zip code must be integer and less than 5 digits !");
+                return;
+			}
 
 			// reprint the address to the page
 			$("#deliveryAddr").html(`
@@ -200,6 +218,7 @@ const addr_inputFunc = event => {
 			$("#view_addr5").text(inputValues[4]);
 
 			editingStatus.addr = false; // state update
+			$("#save").removeAttr("disabled");
 		}
 	} else if (event.key == "Escape") {
 		// if ESC is pressed
@@ -208,12 +227,17 @@ const addr_inputFunc = event => {
 	}
 };
 
-const contact_inputFunc = event => {
+const contact_inputFunc = (event) => {
 	// if enter key is pressed
 	if (event.keyCode == 13) {
 		if (event.shiftKey) {
-            $("#contactNo").html(escapeHtml($("#inp_contact").val()));
-            editingStatus.contact = false; // state update
+			if (!validate_phoneNumber(escapeHtml($("#inp_contact").val()))) {
+				alert("Invalid phone number !");
+				return;
+			}
+			$("#contactNo").html(escapeHtml($("#inp_contact").val()));
+			editingStatus.contact = false; // state update
+			$("#save").removeAttr("disabled");
 		}
 	} else if (event.key == "Escape") {
 		// if ESC is pressed
@@ -221,3 +245,37 @@ const contact_inputFunc = event => {
 		editingStatus.contact = false; // state update
 	}
 };
+
+const saveButton_event = () => {
+	// if save button have "disabled" property
+	if ($("#save").prop("disabled")) {
+		return;
+	}
+	// if none of the field is in edit mode
+	if (!editingStatus.addr && !editingStatus.contact && !editingStatus.name) {
+		// do your job
+		$("#save").prop("disabled", true);
+	} else {
+		alert("Please exit edit mode before saving changes.");
+	}
+};
+
+// ===============
+// ===============
+
+// =====================
+// Validation funcitons
+// =====================
+
+const validate_phoneNumber = (num) => {
+	var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	var phoneno2 = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{5})$/;
+	if (num.match(phoneno) || num.match(phoneno2)) {
+		return true;
+	} else {
+		return false;
+	}
+};
+
+// =====================
+// =====================

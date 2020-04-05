@@ -1,3 +1,5 @@
+
+/* CSS Animation */
 @keyframes fade-in {
 	from {
 		opacity: 0%;
@@ -133,4 +135,30 @@ input[type="radio"]:checked:hover + label::before {
 
 input[type="radio"]:hover + label::before {
 	background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Save changes button */
+button {
+	color: white;
+	padding: 10px 20px;
+	border-radius: 25px;
+	background-color: rgb(237, 20, 91);
+    border: none;
+    outline: none;
+}
+
+button:disabled {
+    background-color: grey;
+    transition: opacity .3s ease;
+    opacity: 65%;
+}
+
+button:enabled {
+    background-color: rgb(237, 20, 91);
+    transition: opacity .3s ease;
+    opacity: 100%;
+}
+
+button:hover {
+	cursor: pointer;
 }
