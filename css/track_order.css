@@ -22,21 +22,28 @@
 	background-color: black;
 }
 
-#progressBar::before {
+#progressBar {
 	position: relative;
 	display: block;
 	z-index: -1;
 	top: 17px; /* This is also calculated before hand, might be a better way to apporach this */
 	width: 60%;
-	height: 1px;
+	height: 3px;
 	left: 20%; /* This is calculated before hand, might be a better way to do this */
 	content: "";
+
+    /* this is probably the most op shit i ever did in css */
 	background-image: linear-gradient(
-		90deg,
-		black,
-	    black 75%,
-		transparent 75%,
-		transparent 100%
+		to right,
+		lime 0%,
+        lime 25%,
+        black 25%,
+        black 50%,
+		black 100%
 	);
-	background-size: 20px 1px;
+    background-size: 200% 100%;
+    /* consider changing transition duration */
+	transition: all 1s ease; 
+    background-repeat: none;
+    background-position: right;
 }

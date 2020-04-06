@@ -41,32 +41,33 @@
 					<td><button>Track</button></td>
 				</tr>
 			</table>
-        </div>
-        <!-- Both status bar and progress bar and status msg will use the same container to ensure same positioning -->
+		</div>
+		<!-- Both status bar and progress bar and status msg will use the same container to ensure same positioning -->
 		<!-- Delivery progress bar -->
-		<div class="delivery-progress-bar-container" id="progressBar">
+		<div id="progressBar"></div>
+		<div class="delivery-progress-bar-container">
 			<div class="deliery-container-section">
-				<div class="outer-circle">
+				<div class="outer-circle" id="progress-1">
 					<div class="inner-circle"></div>
 				</div>
 			</div>
 			<div class="deliery-container-section">
-				<div class="outer-circle">
+				<div class="outer-circle" id="progress-2">
 					<div class="inner-circle"></div>
 				</div>
 			</div>
 			<div class="deliery-container-section">
-				<div class="outer-circle">
+				<div class="outer-circle" id="progress-3">
 					<div class="inner-circle"></div>
 				</div>
 			</div>
 			<div class="deliery-container-section">
-				<div class="outer-circle">
+				<div class="outer-circle" id="progress-4">
 					<div class="inner-circle"></div>
 				</div>
 			</div>
-        </div>
-        
+		</div>
+
 		<!-- Delivery status msg -->
 		<div class="delivery-progress-bar-container">
 			<div class="deliery-container-section">
@@ -81,4 +82,31 @@
 			<div class="deliery-container-section">Delivered</div>
 		</div>
 	</body>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		function setprogress(val) {
+			val = val / 2;
+			var def_transition = $("#progressBar").css("transition");
+			// $("#progressBar").css("opacity", "0%");
+
+			$("#progressBar").css("background-position", "right"); // hide the progress bar
+
+			setTimeout(function () {
+				$("#progressBar").css(
+					"background-image",
+					"linear-gradient(to right, lime 0%, lime " +
+						val +
+						"%, black " +
+						val +
+						"%, black 50%, black 100%"
+				); // change the progress bar
+				// $("#progressBar").css("opacity", "100%");
+				$("#progressBar").css("transition", "all 1s ease");
+				setTimeout(function () {
+					$("#progressBar").css("background-position", "left"); // show the progress bar
+				}, 500);
+			}, 1000);
+			$("#progressBar").css("transition", def_transition); // return to default transition
+		}
+	</script>
 </html>
