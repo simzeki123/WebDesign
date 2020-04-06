@@ -36,7 +36,7 @@ body {
 .page-container {
 	display: grid;
 	grid-template-areas: "iteml itemr";
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 60% 40%;
 	padding: 20px;
 }
 

@@ -1,0 +1,42 @@
+.delivery-progress-bar-container {
+	text-align: center;
+}
+
+.deliery-container-section {
+	width: 20%;
+	display: inline-block;
+}
+
+.outer-circle {
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+.inner-circle {
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	margin: 8px auto;
+	background-color: black;
+}
+
+#progressBar::before {
+	position: relative;
+	display: block;
+	z-index: -1;
+	top: 17px; /* This is also calculated before hand, might be a better way to apporach this */
+	width: 60%;
+	height: 1px;
+	left: 20%; /* This is calculated before hand, might be a better way to do this */
+	content: "";
+	background-image: linear-gradient(
+		90deg,
+		black,
+	    black 75%,
+		transparent 75%,
+		transparent 100%
+	);
+	background-size: 20px 1px;
+}

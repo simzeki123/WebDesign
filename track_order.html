@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Track my order</title>
+		<link rel="stylesheet" href="css/track_order.css" />
+	</head>
+	<body>
+		<div>
+			Your order: 3
+		</div>
+		<div>
+			<table>
+				<thead>
+					<th>#</th>
+					<th>Order Number</th>
+					<th>Item</th>
+					<th>Quantity</th>
+					<th></th>
+				</thead>
+				<tr>
+					<td>1</td>
+					<td>A0001</td>
+					<td>Present Wrapping Paper</td>
+					<td>10</td>
+					<td><button>Track</button></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>A0001</td>
+					<td>Present Wrapping Paper</td>
+					<td>10</td>
+					<td><button>Track</button></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>A0001</td>
+					<td>Present Wrapping Paper</td>
+					<td>10</td>
+					<td><button>Track</button></td>
+				</tr>
+			</table>
+        </div>
+        <!-- Both status bar and progress bar and status msg will use the same container to ensure same positioning -->
+		<!-- Delivery progress bar -->
+		<div class="delivery-progress-bar-container" id="progressBar">
+			<div class="deliery-container-section">
+				<div class="outer-circle">
+					<div class="inner-circle"></div>
+				</div>
+			</div>
+			<div class="deliery-container-section">
+				<div class="outer-circle">
+					<div class="inner-circle"></div>
+				</div>
+			</div>
+			<div class="deliery-container-section">
+				<div class="outer-circle">
+					<div class="inner-circle"></div>
+				</div>
+			</div>
+			<div class="deliery-container-section">
+				<div class="outer-circle">
+					<div class="inner-circle"></div>
+				</div>
+			</div>
+        </div>
+        
+		<!-- Delivery status msg -->
+		<div class="delivery-progress-bar-container">
+			<div class="deliery-container-section">
+				Ready to be Delivered
+			</div>
+			<div class="deliery-container-section">
+				Picked up by courier
+			</div>
+			<div class="deliery-container-section">
+				Out for delivery
+			</div>
+			<div class="deliery-container-section">Delivered</div>
+		</div>
+	</body>
+</html>
