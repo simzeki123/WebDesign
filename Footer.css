@@ -26,7 +26,6 @@ footer{
     font-weight:bold;
     font-style: italic;
     font-size: 1.5em;
-    background-color: coral;
     grid-auto-rows: 40px;
     align-self: center;
 }
@@ -63,7 +62,6 @@ footer{
     align-self:center;
     padding :7px 7px;
     font-size: 3em;
-    background-color: lawngreen;
     grid-column: 1/3;
     margin: 0;
 }
@@ -71,7 +69,6 @@ footer{
 .footer_com_motto{
     display: grid;
     font-size: 1.8em;
-    background-color: rgb(118, 118, 189);
     margin: 0;
     align-self:top;
     grid-column : 1/3;
@@ -84,10 +81,13 @@ footer{
 }
 
 .footer_contacts{
-    background-color: cyan;
+    display: grid;
+    justify-content: center;
     margin: 0;
 }
 
 .footer_contacts > p{
-margin: 0;
+    display: grid;
+    justify-self: center;
+    margin: 0;
 }

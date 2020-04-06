@@ -1,0 +1,15 @@
+.welcome_img_grid{
+margin: 0;
+}
+
+.catagory_grid{
+    background-color: teal;
+    width: 188px;
+    max-height: 288px;
+}
+
+.product_description{
+    background-color: rgb(94, 85, 85);
+    max-height: 100px;
+}
+

@@ -42,6 +42,31 @@ header {
 	font-weight: bold;
 }
 
+/*Our product*/
+
+.our_product{
+	display: inline-block;
+	position: relative;
+	left: 78%;
+	top: -20px;
+}
+
+.our_product>a:link,.our_product>a:visited{
+background-color: rgb(218, 197, 206);
+text-decoration: none;
+display: inline;
+color: rgb(0, 0, 0);
+padding: 14px 15px;
+}
+
+.our_product>a:active,.our_product>a:hover{
+background-color: rgb(173, 141, 155);
+text-decoration: none;
+display: inline;
+color: rgb(0, 0, 0);
+padding: 14px 15px;
+}
+
 /*User profile*/
 .userIcon {
 	position: absolute;
