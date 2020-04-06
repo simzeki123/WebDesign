@@ -1,15 +1,124 @@
+/*
+Need to add styles to:
+1.alltext
+May add:
+1.shadow when hover over product
+*/
+
+
+
 .welcome_img_grid{
 margin: 0;
+background-color: rgb(185, 94, 94);
+width: 1600px;
 }
 
+.welcome_img_grid>img{
+background-color: rgb(209, 194, 194);
+justify-self: center;
+width: 1500px;
+margin-left: 50px;
+}
+
+/*Whole grid of catagory grid*/
 .catagory_grid{
-    background-color: teal;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-items: center;
+    height: 350px;
+    width: 1400px;
+    margin: auto;
+    
+}
+/*each individual product grid*/
+.catagory_grid >div{
     width: 188px;
     max-height: 288px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
 }
 
-.product_description{
-    background-color: rgb(94, 85, 85);
+.catagory_grid>div>a{
+    text-decoration: none;
+}
+
+.catagory_grid>h2{
+display: grid;
+justify-self: left;
+align-self: start;
+grid-column: 1/6;
+margin: 0em;
+}
+
+
+/*each individual product des and img grid*/
+.product_img_1{
+    max-height: 188px;
+}
+
+.product_description_1{
     max-height: 100px;
+    height:100%;
 }
 
+.product_description_1>p{
+    margin: 0;
+}
+
+.product_img_2{
+    max-height: 188px;
+}
+
+.product_description_2{
+    max-height: 100px;
+    height:100%;
+}
+
+.product_description_2>p{
+    margin: 0;
+}
+
+.product_img_3{
+    max-height: 188px;
+}
+
+.product_description_3{
+    max-height: 100px;
+    height:100%;
+}
+
+.product_description_3>p{
+    margin: 0;
+}
+
+.product_img_4{
+    max-height: 188px;
+}
+
+.product_description_4{
+    max-height: 100px;
+    height:100%;
+}
+
+.product_description_4>p{
+    margin: 0;
+}
+
+.product_img_5{
+    max-height: 188px;
+}
+
+.product_description_5{
+    max-height: 100px;
+    height:100%;
+}
+
+.product_description_5>p{
+    margin: 0;
+}
