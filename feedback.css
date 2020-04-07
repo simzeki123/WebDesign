@@ -1,3 +1,7 @@
+/*
+1.add javascrips
+*/
+
 body{
     margin: 0px;
 }
@@ -7,10 +11,70 @@ body{
 .global_feedback_grid{
     width: 1400px;
     height: 1000px;
+    display: grid;
 }
 
 
-/*Title*/
-.global_feedback_grid>h1{
-    font-size: 3em;
+/*Titles*/
+
+h1{
+margin: 0;
+font-size: 3em;
+justify-self: center;
+align-self:start;
+}
+
+h2{
+    font-size: 2em;
+    margin: 0;
+    border-bottom: 2px solid rgb(226, 140, 140);
+}
+
+/*Image of feedback*/
+img{
+    justify-self: center;
+    align-self:start;
+    margin-top:-100px;
+}
+
+/*Feedback radio box*/
+.feedback_radio_grid{
+box-sizing: border-box;
+border: 2px solid rgb(142, 178, 231);
+border-radius: 4px;
+width: 220px;
+height: 250px;
+justify-self: center;
+margin-top:-100px;
+}
+
+
+.feedback_radio
+{
+    margin: 0;
+    font-size: 1.5em;
+}
+
+
+input[type='radio'] {
+    transform: scale(1.5);
+    align-self: center;
+}
+
+/*Message box*/
+.text_box_grid{
+justify-self: center;
+align-self: flex;
+position: relative;
+top: -100px;
+}
+textarea{
+width:500px;
+height: 200px;
+resize: none;
+box-sizing: border-box;
+border: 2px solid rgb(142, 178, 231);
+border-radius: 4px;
+background-color: #e0e9eb;
+font-size: 16px;
 }
