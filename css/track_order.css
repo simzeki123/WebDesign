@@ -1,0 +1,49 @@
+.delivery-progress-bar-container {
+	text-align: center;
+}
+
+.deliery-container-section {
+	width: 20%;
+	display: inline-block;
+}
+
+.outer-circle {
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+.inner-circle {
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	margin: 8px auto;
+	background-color: black;
+}
+
+#progressBar {
+	position: relative;
+	display: block;
+	z-index: -1;
+	top: 17px; /* This is also calculated before hand, might be a better way to apporach this */
+	width: 60%;
+	height: 3px;
+	left: 20%; /* This is calculated before hand, might be a better way to do this */
+	content: "";
+
+    /* this is probably the most op shit i ever did in css */
+	background-image: linear-gradient(
+		to right,
+		lime 0%,
+        lime 25%,
+        black 25%,
+        black 50%,
+		black 100%
+	);
+    background-size: 200% 100%;
+    /* consider changing transition duration */
+	transition: all 1s ease; 
+    background-repeat: none;
+    background-position: right;
+}
