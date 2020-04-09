@@ -10,7 +10,7 @@
 		<div>
 			Your order: 3
 		</div>
-		<div>
+		<div class="table-container">
 			<table>
 				<thead>
 					<th>#</th>
@@ -19,91 +19,102 @@
 					<th>Quantity</th>
 					<th></th>
 				</thead>
-				<tr>
-					<td>1</td>
-					<td>A0001</td>
-					<td>Present Wrapping Paper</td>
-					<td>10</td>
-					<td><button>Track</button></td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>A0001</td>
-					<td>Present Wrapping Paper</td>
-					<td>10</td>
-					<td><button>Track</button></td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>A0001</td>
-					<td>Present Wrapping Paper</td>
-					<td>10</td>
-					<td><button>Track</button></td>
-				</tr>
+				<script>
+					for (let x = 0; x < 7; x++) {
+						document.write(`
+                        <tr>
+                            <td>1</td>
+                            <td>A0001</td>
+                            <td>Present Wrapping Paper</td>
+                            <td>10</td>
+                            <td><button onclick="setprogress(Math.round(Math.random() * 100));">Track</button></td>
+				        </tr>
+                        `);
+					}
+				</script>
 			</table>
 		</div>
-		<!-- Both status bar and progress bar and status msg will use the same container to ensure same positioning -->
-		<!-- Delivery progress bar -->
-		<div id="progressBar"></div>
-		<div class="delivery-progress-bar-container">
-			<div class="deliery-container-section">
-				<div class="outer-circle" id="progress-1">
-					<div class="inner-circle"></div>
-				</div>
+		<div id="deliveryProgressBack">
+			<div id="sledge-container">
+				<img
+					src="misc/Sledge.png"
+					alt="sledge"
+					style="width: 80px; height: 50px;"
+				/>
 			</div>
-			<div class="deliery-container-section">
-				<div class="outer-circle" id="progress-2">
-					<div class="inner-circle"></div>
-				</div>
-			</div>
-			<div class="deliery-container-section">
-				<div class="outer-circle" id="progress-3">
-					<div class="inner-circle"></div>
-				</div>
-			</div>
-			<div class="deliery-container-section">
-				<div class="outer-circle" id="progress-4">
-					<div class="inner-circle"></div>
-				</div>
-			</div>
-		</div>
 
-		<!-- Delivery status msg -->
-		<div class="delivery-progress-bar-container">
-			<div class="deliery-container-section">
-				Ready to be Delivered
+			<!-- Both status bar and progress bar and status msg will use the same container to ensure same positioning -->
+			<!-- Delivery progress bar -->
+			<div id="progressBar"></div>
+
+			<div class="delivery-progress-bar-container">
+				<div class="deliery-container-section">
+					<div class="outer-circle" id="progress-1">
+						<div class="inner-circle"></div>
+					</div>
+				</div>
+				<div class="deliery-container-section">
+					<div class="outer-circle" id="progress-2">
+						<div class="inner-circle"></div>
+					</div>
+				</div>
+				<div class="deliery-container-section">
+					<div class="outer-circle" id="progress-3">
+						<div class="inner-circle"></div>
+					</div>
+				</div>
+				<div class="deliery-container-section">
+					<div class="outer-circle" id="progress-4">
+						<div class="inner-circle"></div>
+					</div>
+				</div>
 			</div>
-			<div class="deliery-container-section">
-				Picked up by courier
+
+			<!-- Delivery status msg -->
+			<div class="delivery-progress-bar-container">
+				<div class="deliery-container-section">
+					Ready to be Delivered
+				</div>
+				<div class="deliery-container-section">
+					Picked up by courier
+				</div>
+				<div class="deliery-container-section">
+					Out for delivery
+				</div>
+				<div class="deliery-container-section">Delivered</div>
 			</div>
-			<div class="deliery-container-section">
-				Out for delivery
-			</div>
-			<div class="deliery-container-section">Delivered</div>
 		</div>
 	</body>
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script>
 		function setprogress(val) {
-			val = val / 2;
+            val = val / 2;
 			var def_transition = $("#progressBar").css("transition");
 			// $("#progressBar").css("opacity", "0%");
 
 			$("#progressBar").css("background-position", "right"); // hide the progress bar
+			$("#sledge-container").css("padding-left", "20%");
 
 			setTimeout(function () {
 				$("#progressBar").css(
 					"background-image",
 					"linear-gradient(to right, lime 0%, lime " +
-						val +
+						Math.round(val) +
 						"%, black " +
-						val +
+						Math.round(val) +
 						"%, black 50%, black 100%"
 				); // change the progress bar
 				// $("#progressBar").css("opacity", "100%");
 				$("#progressBar").css("transition", "all 1s ease");
 				setTimeout(function () {
 					$("#progressBar").css("background-position", "left"); // show the progress bar
+                    
+					let padding_val = (val*2 / 100) * 60 + 20; // padding left from 20 to 80 is equivalent of 0 - 100 as progress
+					$("#sledge-container").css(
+						"padding-left",
+						`${padding_val}%`
+					);
+                    console.log(`val: ${val}, padding_val: ${padding_val}`);
 				}, 500);
 			}, 1000);
 			$("#progressBar").css("transition", def_transition); // return to default transition
