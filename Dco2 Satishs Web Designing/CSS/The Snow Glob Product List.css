@@ -1,0 +1,89 @@
+.double
+{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap:1em;
+}
+
+.double>div{
+    border:#333 1px solid ;
+    padding:1em;
+    
+}
+
+.gift{
+    width:auto;
+    height: 800px;
+    overflow: auto;
+   
+
+}
+
+
+
+
+.popularG{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:1em;
+}
+
+.popularG>div
+{
+    
+    border:#333 1px solid ;
+    padding:1em;
+}
+
+#a:hover
+{
+    
+    border: rgb(255, 255, 255) 1px solid;
+
+}
+
+
+.price
+{
+font-weight: bold;
+
+}
+
+.sort
+{
+    border:#333 1px solid ;
+    font-size: 1.5em;
+	background-color: lightgray;
+	margin-left: 10%;
+
+}
+
+
+.sort:hover
+{
+
+ background-color: white;
+ border: #333 1px solid;
+
+}
+
+.nested{
+
+    display: grid;
+    grid-template-columns:repeat(3,1fr) ;
+    grid-gap: 1em;
+    grid-auto-rows: minmax(50px,auto);
+  
+}
+
+.nested>div{
+margin: 1em;
+padding: 1em;
+border: #333 1px solid;
+grid-auto-rows: 70px;
+}
+
+.star{
+    font-size: 0.9em;
+    color: rgba(136, 136, 136,0.7);
+}
