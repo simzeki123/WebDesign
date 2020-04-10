@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Shopping Cart</title>
+        <link href="shoppingCart.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <header>
+        </header>
+
+        <h1>YOUR CART</h1>
+        <div class="allProduct">
+            <div class="product">
+                 <div class="checkBox">
+                    <input type="checkbox" name="slctItem" id="slctItem" />
+                </div>
+
+                <div class="productImg">
+                    <img src="product.jpg" alt="productImg" />
+                </div>
+
+                 <div class="productDetails">
+                      <div class="productName"><b>Product Name</b> : Chirstmas Snow Globe<br><br></div>
+                      <p class="productDes"><b>Product Description</b> : The craftsmanship of this piece is superb, this piece is made of resin
+                      </p>
+                </div>
+                
+                <div class="productAmount">
+                    <div class="productPrice">
+                          <b>Price</b> : RM 30.00<br><br>
+                    </div>
+                    
+                    <div class="productQty">
+                        <b>Quantity</b>: <input type="number" name="qty" id="qty" min="1" /><br><br>
+                     </div>    
+                
+                    <div class="removeProduct">
+                         <button class="removeProduct">REMOVE</button> 
+                    </div>
+                </div>
+
+                <div class="orderSummary">
+                    <div class="container">
+                        <h2>Order Summary <span class="price" style="color:black"></span></h2>
+                        <p>Subtotal <span class="price">RM 60.00</span></p>
+                        <p>Shipping Fee <span class="price">RM 3.00</span></p>
+                        <p>Tax Rate <span class="price">RM 6.00</span></p>
+                        <hr>
+                        <p>Total Amount <span class="price" style="color:black"><b>RM 69.00</b></span></p>
+                        <button class="checkout"
+                            onclick="document.location = 'paymentDetails.html'">Proceed to Checkout</button>
+                    </div>
+                </div>
+
+                <div class="checkBox">
+                     <input type="checkbox" name="slctItem" id="slctItem" />
+                 </div>
+    
+                <div class="productImg">
+                    <img src="product.jpg" alt="productImg" />
+                </div>
+    
+                <div class="productDetails">
+                    <div class="productName"><b>Product Name</b> : Chirstmas Snow Globe<br><br></div>
+                    <p class="productDes"><b>Product Description</b> : The craftsmanship of this piece is superb, this piece is made of resin
+                    </p>
+                </div>
+                    
+                <div class="productAmount">
+                    <div class="productPrice">
+                        <b>Price</b> : RM 30.00<br><br>
+                    </div>
+                        
+                    <div class="productQty">
+                        <b>Quantity</b>: <input type="number" name="qty" id="qty" min="1" /><br><br>
+                    </div>    
+                    
+                    <div class="removeProduct">
+                        <button class="removeProduct" onclick="">REMOVE</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer></footer>
+    
+    </body>
+</html>
