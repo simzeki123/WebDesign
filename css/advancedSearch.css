@@ -1,0 +1,34 @@
+html    {
+    min-width: 800px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.keyword {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px; 
+    margin-bottom: 12px;
+}
+  
+.price, .ratings, .conditions, .color  {
+    width: 100%;
+    padding: 12px 20px 12px 40px;
+    margin-bottom: 12px;
+    font-size: large;
+  }
+
+  .price:hover, .ratings:hover, .conditions:hover, .color:hover  {
+    background-color:gainsboro;
+  }
+
+  .advanced_search  {
+    float: right;
+    padding: 12px 20px 12px 20px;
+    background-color: rgb(206, 103, 103);
+    color: white;
+  }
+
+  .advanced_search:hover  {
+    background-color: rgb(170, 68, 68);
+  }

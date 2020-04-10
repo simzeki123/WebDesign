@@ -1,0 +1,70 @@
+html    {
+    min-width: 800px;
+    max-width: 1200px;
+}
+
+.delivery_img    {
+    width: 100%;
+}
+
+.delivery   {
+    display: grid;
+    grid-template-rows: 100%;
+}
+
+.delivery_details  {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border: solid 1px;
+    grid-column-gap: 8%;
+}
+
+.delivery_partner   {
+    font-size: x-large;
+    padding-top: 30px;
+    font-weight: bold;
+}
+
+.tracking   {
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 10px;
+}
+
+a   {
+    font-size: x-large;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;  
+    position: absolute;
+    z-index: 1;
+  }
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+.delivery_date  {
+    position: absolute;
+    top: 51px;
+    left: 110px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.receiver_details   {
+    padding: 10px 0px 10px 10px;
+    display: grid;
+    grid-row-gap: 10%;
+    border: solid 1px black;
+    height: 100px;
+    font-size: x-large;
+    font-weight: bold;
+}
