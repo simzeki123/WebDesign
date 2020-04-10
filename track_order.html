@@ -5,10 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Track my order</title>
 		<link rel="stylesheet" href="css/track_order.css" />
+		<script src="js/jquery-3.4.1.min.js"></script>
 	</head>
 	<body>
 		<div>
-			Your order: 3
+			Your order: 7
 		</div>
 		<div class="table-container">
 			<table>
@@ -22,12 +23,12 @@
 				<script>
 					for (let x = 0; x < 7; x++) {
 						document.write(`
-                        <tr>
-                            <td>1</td>
-                            <td>A0001</td>
+                        <tr id='row-${x}'>
+                            <td>${x}</td>
+                            <td>A000${x + 1}</td>
                             <td>Present Wrapping Paper</td>
                             <td>10</td>
-                            <td><button onclick="setprogress(Math.round(Math.random() * 100));">Track</button></td>
+                            <td><button id="btn-${x}">Track</button></td>
 				        </tr>
                         `);
 					}
@@ -82,13 +83,56 @@
 					Out for delivery
 				</div>
 				<div class="deliery-container-section">Delivered</div>
-			</div>
-		</div>
+            </div>
+            <div style="padding-top: 10px; width: 90%; text-align: right;">
+                Estimated time of delivery: <span id=eta>-</span> days
+            </div>
+        </div>
 	</body>
-	<script src="js/jquery-3.4.1.min.js"></script>
 	<script>
+		// function for setting status on status bar checkpoints
+		function setBlack(id) {
+			$(`#progress-${id}`).css("border", "2px solid black");
+			$(`#progress-${id} .inner-circle`).css("background-color", "black");
+		}
+		function setGreen(id) {
+			$(`#progress-${id}`).css("border", "2px solid rgb(0,255,0)");
+			$(`#progress-${id} .inner-circle`).css(
+				"background-color",
+				"rgb(0,255,0)"
+			);
+		}
+
+		// rehighlight the checkpoint based on value
+		function updateCheckpointStatus(val) {
+			setGreen(1);
+            $("#eta").html('7');
+			if (val >= 33) {
+				setGreen(2);
+                $("#eta").html('4');
+			}
+
+			if (val >= 67) {
+				setGreen(3);
+                $("#eta").html('2');
+			}
+
+			if (val == 100) {
+				setGreen(4);
+                $("#eta").html('-');
+			}
+		}
+
 		function setprogress(val) {
-            val = val / 2;
+			// clear all checkpoints
+			$(`[id^="progress-"]`).css("border", "2px solid black");
+			$(`[id^="progress-"] .inner-circle`).css(
+				"background-color",
+				"black"
+			);
+
+			val = val / 2;
+
 			var def_transition = $("#progressBar").css("transition");
 			// $("#progressBar").css("opacity", "0%");
 
@@ -99,25 +143,35 @@
 				$("#progressBar").css(
 					"background-image",
 					"linear-gradient(to right, lime 0%, lime " +
-						Math.round(val) +
+						val +
 						"%, black " +
-						Math.round(val) +
+						val +
 						"%, black 50%, black 100%"
 				); // change the progress bar
 				// $("#progressBar").css("opacity", "100%");
 				$("#progressBar").css("transition", "all 1s ease");
 				setTimeout(function () {
 					$("#progressBar").css("background-position", "left"); // show the progress bar
-                    
-					let padding_val = (val*2 / 100) * 60 + 20; // padding left from 20 to 80 is equivalent of 0 - 100 as progress
+
+					let padding_val = ((val * 2) / 100) * 60 + 20; // padding left from 20 to 80 is equivalent of 0 - 100 as progress
 					$("#sledge-container").css(
 						"padding-left",
 						`${padding_val}%`
 					);
-                    console.log(`val: ${val}, padding_val: ${padding_val}`);
+                    updateCheckpointStatus(val*2);
+					// console.log(`val: ${val}, padding_val: ${padding_val}`);
 				}, 500);
 			}, 1000);
 			$("#progressBar").css("transition", def_transition); // return to default transition
 		}
+
+		$("[id^='btn-'").on("click", function () {
+			$("[id^='row-']").css("background-color", "");
+			editThisRow =
+				"#row-" +
+				this.id.substring(this.id.indexOf("-") + 1, this.id.length);
+			$(editThisRow).css("background-color", "rgba(0,255,0, 0.3)");
+			setprogress(Math.round(Math.random() * 100));
+		});
 	</script>
 </html>
