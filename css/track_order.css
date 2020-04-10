@@ -18,7 +18,7 @@
 	width: 32px;
 	height: 32px;
 	margin: 0 auto;
-	border: 1px solid black;
+	border: 2px solid black;
 }
 
 .inner-circle {
@@ -33,7 +33,7 @@
 	position: relative;
 	display: block;
 	z-index: -1;
-	top: 18px; /* This is also calculated before hand, might be a better way to apporach this */
+	top: 19px; /* This is also calculated before hand, might be a better way to apporach this */
 	width: 60%;
 	height: 3px;
 	left: 20%; /* This is calculated before hand, might be a better way to do this */
@@ -57,7 +57,7 @@
 
 /* trying to make this as accurate as possible */
 #sledge-container {
-	padding-left: 20%;
+    padding-left: 20%;
 	transition: all 1s ease;
 }
 
@@ -67,6 +67,7 @@
     overflow-x: auto;
     /* precalculate for 10 rows */
     max-height: 420px;
+    padding-top: 20px;
     width: 80%;
     margin: 0 auto 40px auto;
 }
@@ -84,6 +85,7 @@ tr {
     text-align: center;
     padding: 10px 0px;
     transition: box-shadow .2s;
+    transition: background-color .5s;
 }
 
 tr:hover {
@@ -95,6 +97,7 @@ thead {
     color: white;
 }
 
+/* Track button styling */
 button {
     box-sizing: border-box;
     outline: none;
