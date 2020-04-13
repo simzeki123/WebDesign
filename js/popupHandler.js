@@ -57,6 +57,14 @@ $(document).ready(function() {
         $("#forgetPasswordLink").on("click", function(){
             prompt("Please enter your email that is used to register with us as member.\nIf the email is valid, a password recovery link will be sent to the email.", "example@mail.com");
         });
+
+        $("#signupForm").on("submit", function() {
+            if ($("#newuser_pass").val() != $("#newuser_confirmPass").val() )
+            {
+                alert("Password doesnt match.");
+                return false;
+            }
+        });
     });
 
 });

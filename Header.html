@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Custom header</title>
+		<style>
+			* {
+				font-family: "Gill Sans", "Gill Sans MT", Calibri,
+					"Trebuchet MS", sans-serif;
+			}
+
+			@keyframes slideIn {
+				0% {
+					transform: translateY(1rem);
+					opacity: 0;
+				}
+				100% {
+					transform: translateY(0rem);
+					opacity: 1;
+				}
+				0% {
+					transform: translateY(1rem);
+					opacity: 0;
+				}
+			}
+
+			.slideIn {
+				animation: slideIn 0.5s;
+			}
+
+			html,
+			body {
+				padding: 0;
+				margin: 0;
+			}
+
+			header {
+				padding: 10px 10%;
+				display: grid;
+				grid-template-columns: 25% 50% 25%;
+				background-color: rgba(86, 236, 247, 0.4);
+			}
+
+			header div {
+				text-align: center;
+			}
+
+			#logotxt {
+				font-size: 20px;
+				font-weight: bold;
+				color: #5c4c46;
+				display: inline-block;
+			}
+
+			.search-container {
+				padding: 5px 0;
+			}
+
+			.search-container input {
+				width: 80%;
+				box-sizing: border-box;
+				height: 40px;
+				padding: 0 20px;
+				border-radius: 25px;
+				outline: none;
+				border: none;
+				float: left;
+			}
+
+			.search-container input:focus {
+				border: 2px solid #aa7523;
+			}
+
+			.search-btn-container {
+				float: left;
+				margin-left: 10px;
+				box-sizing: border-box;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background-color: #c4c8a2;
+				vertical-align: middle;
+				transition: all 0.3s ease;
+			}
+
+			.search-btn-container:hover {
+				background-color: white;
+				cursor: pointer;
+				border: 2px solid #c4c8a2;
+				/* https://codepen.io/sosuke/pen/Pjoqqp */
+				filter: invert(93%) sepia(13%) saturate(543%) hue-rotate(17deg)
+					brightness(85%) contrast(88%);
+			}
+
+			.profile-logo:hover {
+				cursor: pointer;
+			}
+
+			.drop-down-container {
+				position: absolute;
+				display: none;
+				background-color: rgb(255, 255, 255);
+				min-width: 160px;
+				overflow: none;
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+				text-align: center;
+			}
+
+			.drop-down-content {
+				padding: 10px;
+			}
+
+			.drop-enabled:hover {
+				background-color: #1f1f1f17;
+				cursor: pointer;
+			}
+
+			.drop-disabled {
+				color: rgba(128, 128, 128, 0.486);
+				cursor: auto;
+			}
+		</style>
+		<link rel="stylesheet" href="css/pop_up.css" />
+	</head>
+	<body>
+		<div class="fullscrnBox" id="loginContainerBack"></div>
+		<div class="fullscrnBox" id="signUpContainerBack"></div>
+		<header>
+			<a href="/Header.html">
+				<div>
+					<img
+						style="vertical-align: middle;"
+						src="misc/newlogo.gif"
+						alt="Logo"
+					/>
+
+					<span id="logotxt">The Snow Globe</span>
+				</div>
+			</a>
+			<div>
+				<div class="search-container">
+					<input
+						type="text"
+						name="search_query"
+						id="search_query"
+						placeholder="Enter What you're looking for !"
+					/>
+
+					<div class="search-btn-container">
+						<span
+							style="
+								height: 100%;
+								display: inline-block;
+								vertical-align: middle;
+							"
+						></span>
+						<img
+							style="
+								display: inline-block;
+								vertical-align: middle;
+								text-align: center;
+							"
+							src="misc/searchIco.png"
+							width="20px"
+							height="20px"
+						/>
+					</div>
+				</div>
+			</div>
+			<div id="header-3c">
+				<img
+					id="profileIco"
+					class="profile-logo"
+					style="border-radius: 50%;"
+					src="misc/newprofile.gif"
+					width="48px"
+					height="48px"
+				/>
+				<div class="drop-down-container slideIn">
+					<div class="drop-down-content drop-disabled slideIn" id="myProfileBtn">
+						My Profile
+					</div>
+					<div class="drop-down-content drop-disabled slideIn" id="trackOrderBtn">
+						Track my order
+					</div>
+					<div class="drop-down-content drop-disabled slideIn" id="mycartBtn">
+						My cart
+					</div>
+					<hr />
+					<div
+						class="drop-down-content drop-enabled slideIn"
+						id="openLoginBox"
+					>
+						Log in
+					</div>
+					<div
+						class="drop-down-content drop-enabled slideIn"
+						id="openSignupBtn"
+					>
+						Sign up
+					</div>
+					<div
+						style="display: none;"
+						id="logOutBtn"
+						class="drop-down-content drop-enabled slideIn"
+					>
+						Log Out
+					</div>
+				</div>
+			</div>
+		</header>
+	</body>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/popupHandler.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#profileIco").on("click", function () {
+				$(".drop-down-container").css(
+					"display",
+					$(".drop-down-container").css("display") == "block"
+						? "none"
+						: "block"
+				);
+			});
+
+			$(window).on("resize", function () {
+				$(".drop-down-container").css(
+					"right",
+					`${Math.round(
+						window.innerWidth * 0.1 +
+							(window.innerWidth * 0.8 * 0.25 - 48) / 2
+					)}px`
+				);
+			});
+
+			// Hope this doesnt override on click in popupHandler
+			$("#openLoginBox").on("click", function () {
+				$(".drop-down-container").css("display", "none");
+			});
+
+			$("#openSignupBtn").on("click", function () {
+				$(".drop-down-container").css("display", "none");
+			});
+
+			// If Login was done before hand
+			if (new URLSearchParams(location.search).get("usrname") != null) {
+				let disabled = $(".drop-disabled");
+				let enabled = $(".drop-enabled");
+				enabled.css("display", "none");
+				disabled.addClass("drop-enabled").removeClass("drop-disabled");
+                $("#logOutBtn").css("display", "block");
+                $("#logOutBtn").on("click", function() {
+                    window.location.href = window.location.href.substring(0, window.location.href.indexOf("?"));
+                });
+                $("#myProfileBtn").on("click", function(){
+                    window.location.href = "";
+                });
+                $("#trackOrderBtn").on("click", function(){
+                    window.location.href = "";
+                });
+                $("#mycartBtn").on("click", function(){
+                    window.location.href = "";
+                });
+			}
+		});
+	</script>
+</html>
