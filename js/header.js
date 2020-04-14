@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    // load the component using async ajax call
-    $("header").load("/components/header.html");
-    
+	// load the component using async ajax call
+	$("header").load("components/header.html");
+
 	// when all ajax call had been completed
 	$(document).ajaxStop(function () {
 		$("#profileIco").on("click", function () {
@@ -47,13 +47,13 @@ $(document).ready(function () {
 				);
 			});
 			$("#myProfileBtn").on("click", function () {
-				window.location.href = "/memberaccount.html";
+				window.location.href = "memberaccount.html";
 			});
 			$("#trackOrderBtn").on("click", function () {
-				window.location.href = "/track_order.html";
+				window.location.href = "track_order.html";
 			});
 			$("#mycartBtn").on("click", function () {
-				window.location.href = "/shoppingCart.html";
+				window.location.href = "shoppingCart.html";
 			});
 		}
 	});
