@@ -40,7 +40,6 @@ height: 180px;
 
 /*MOTTO*/
 .motto_grid{
-    display: grid;
     background-color: rgb(158, 86, 34);
     height: 300px;
     justify-self: right;
