@@ -63,6 +63,7 @@ div ul li span{
  } 
 
  div ul.sGold{
+     
     color: gold;
  } 
 
@@ -96,11 +97,7 @@ div ul li span{
     min-width: 200px;
     font-size: 0.8em;
     color:black;
-    text-align: center;
-    
-   
-  
-    /* Position the tooltip */
+    text-align: center;  
     position: absolute;
     
   }
