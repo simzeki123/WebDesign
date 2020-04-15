@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Header</title>
+        <link rel="stylesheet" href="css/pop_up.css" />
+		<link rel="stylesheet" href="css/header.css" />
+	</head>
+	<body>
+		<div class="fullscrnBox" id="loginContainerBack"><!-- Login Box hidden element -->
+            <div class="popupBox" id="loginContainer">
+                <form id="loginForm" action="" method="get" onsubmit='alert("You are logged in.");''>
+                    <img
+                        src="misc/XButton.gif"
+                        alt="Close Button"
+                        id="closeLoginBtn"
+                        class="closePopupBtn"
+                    />
+                    <img
+                        src="misc/login_logo.gif"
+                        alt="Login Logo"
+                        id="loginLogo"
+                        class="popupLogo"
+                    />
+                    <br />
+                    <div>
+                        <b>Welcome Back !</b>
+                    </div>
+                    <br />
+                    <div>
+                        <input
+                            autocomplete="off"
+                            type="text"
+                            name="usrname"
+                            id="usrname"
+                            placeholder="Username"
+                            required
+                        />
+                        <div class="inputFieldUnderline"></div>
+                    </div>
+                    <br />
+                    <div>
+                        <input
+                            type="password"
+                            name="pass"
+                            id="pass"
+                            placeholder="Password"
+                            required
+                        />
+                        <div class="inputFieldUnderline"></div>
+                    </div>
+                    <br />
+                    <div>
+                        <input class="roundBtn" type="submit" value="Login" id="loginBtn" />
+                    </div>
+                    <br />
+                    <div style="padding-bottom: 20px;">
+                        <a style="text-decoration: underline; cursor: pointer;" id="forgetPasswordLink">Forget password ? </a>
+                    </div>
+                </form>
+            </div></div>
+		<div class="fullscrnBox" id="signUpContainerBack"><div class="popupBox" id="signUpContainer">
+            <form action="memberaccount.html" id="signupForm">
+                <img
+                    src="misc/XButton.gif"
+                    alt="Close Button"
+                    id="closeSignupBtn"
+                    class="closePopupBtn"
+                />
+                <img
+                    src="misc/login_logo.gif"
+                    alt="Sign Up Logo"
+                    id="signupLogo"
+                    class="popupLogo"
+                />
+                <br />
+                <div>
+                    <b>Welcome! New fella.</b>
+                </div>
+                <br />
+                <div>
+                    <input
+                        autocomplete="off"
+                        type="text"
+                        name="usrname"
+                        id="newuser_usrname"
+                        placeholder="Username"
+                        required
+                    />
+                    <div class="inputFieldUnderline"></div>
+                </div>
+                <br />
+                <div>
+                    <input
+                        type="email"
+                        name="emailAddr"
+                        id="newuser_emailAddr"
+                        placeholder="E-mail Address"
+                        required
+                    />
+                    <div class="inputFieldUnderline"></div>
+                </div>
+                <br />
+        
+                <div>
+                    <input
+                        type="password"
+                        name="pass"
+                        id="newuser_pass"
+                        placeholder="Password"
+                        required
+                    />
+                    <div class="inputFieldUnderline"></div>
+                </div>
+                <br />
+                <div>
+                    <input
+                        type="password"
+                        name="confirmPass"
+                        id="newuser_confirmPass"
+                        placeholder="Comfirm Password"
+                        required
+                    />
+                    <div class="inputFieldUnderline"></div>
+                </div>
+                <br />
+                <div>
+                    <input
+                        class="roundBtn"
+                        type="submit"
+                        value="Register"
+                        id="registerBtn"
+                    />
+                </div>
+                <br />
+                <div style="padding-bottom: 20px;">
+                    <a style="text-decoration: underline;cursor:pointer;" id="alreadMemberLink">Already Member? </a>
+                </div>
+            </form>
+        </div>
+        </div>
+		<header><a href="home_page.htm">
+            <div style="grid-area: blk-a;">
+                <img
+                    style="vertical-align: middle;"
+                    src="misc/newlogo.gif"
+                    alt="Logo"
+                />
+        
+                <span id="logotxt">The Snow Globe</span>
+            </div>
+        </a>
+        <div style="grid-area: blk-b;">
+            <div class="search-container">
+                <form
+                    action="The Snow Glob Product Listing.html"
+                >
+                    <input
+                        type="text"
+                        name="search_query"
+                        id="search_query"
+                        placeholder="Enter What you're looking for !"
+                    />
+                </form>
+        
+                <div
+                    class="search-btn-container"
+                    onclick='window.location.href = "The Snow Glob Product Listing.html?search_query=" + document.getElementById("search_query").value;'
+                >
+                    <span
+                        style="
+                            height: 100%;
+                            display: inline-block;
+                            vertical-align: middle;
+                        "
+                    ></span>
+                    <img
+                        style="
+                            display: inline-block;
+                            vertical-align: middle;
+                            text-align: center;
+                        "
+                        src="misc/searchIco.png"
+                        width="20px"
+                        height="20px"
+                    />
+                </div>
+            </div>
+        </div>
+        <div id="header-3c" style="grid-area: blk-c;">
+            <img
+                id="profileIco"
+                class="profile-logo"
+                style="border-radius: 50%;"
+                src="misc/newprofile.gif"
+                width="48px"
+                height="48px"
+            />
+            <div class="drop-down-container slideIn">
+                <div class="drop-down-content drop-disabled slideIn" id="myProfileBtn">
+                    My Profile
+                </div>
+                <div class="drop-down-content drop-disabled slideIn" id="trackOrderBtn">
+                    Track my order
+                </div>
+                <div class="drop-down-content drop-disabled slideIn" id="mycartBtn">
+                    My cart
+                </div>
+                <hr />
+                <div class="drop-down-content drop-enabled slideIn" id="openLoginBox">
+                    Log in
+                </div>
+                <div class="drop-down-content drop-enabled slideIn" id="openSignupBtn">
+                    Sign up
+                </div>
+                <div
+                    style="display: none;"
+                    id="logOutBtn"
+                    class="drop-down-content drop-enabled slideIn"
+                >
+                    Log Out
+                </div>
+            </div>
+        </div>
+        <div style="grid-area: blk2;">
+            <a style="text-decoration: none;" href="./home_page.htm">Home</a>
+            |
+            <a
+                style="text-decoration: none;"
+                href="The Snow Glob Product Listing.html"
+                >Our Products</a
+            >
+            |
+            <a style="text-decoration: none;" href="./about_us.htm">About Us</a>
+            |
+            <a style="text-decoration: none;" href="./advancedSearch.html"
+                >Advanced Search</a
+            >
+        </div>
+        
+        </header>
+        <!-- Your Page content go here -->
+	</body>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script>
+        // handlers for login box
+        // Open Login Button
+		let openLoginbtn = document.getElementById("openLoginBox");
+		openLoginbtn.addEventListener("click", function () {
+			document.getElementById("loginContainerBack").style.display =
+				"block";
+			// Wait for 1ms before changing the width to allow CSS transition to work
+			setTimeout(function () {
+				document.getElementById("loginContainer").style.width = "400px";
+			}, 1);
+		});
+
+		// Close login button
+		let closeLoginBtn = document.getElementById("closeLoginBtn");
+		closeLoginBtn.addEventListener("click", function () {
+			document.getElementById("loginContainerBack").style.display =
+				"none";
+			// reset form
+			document.getElementById("loginContainer").style.width = "0px";
+			document.getElementById("loginForm").reset();
+        });
+        
+        let openSignupBtn = $("#openSignupBtn");
+		openSignupBtn.on("click", function () {
+			document.getElementById("signUpContainerBack").style.display =
+				"block";
+			// Wait for 1ms before changing the width to allow CSS transition to work
+			setTimeout(function () {
+				document.getElementById("signUpContainer").style.width =
+					"400px";
+			}, 1);
+		});
+
+        // handler for signupBox
+		let closeSignupBtn = $("#closeSignupBtn");
+		closeSignupBtn.on("click", function () {
+			document.getElementById("signUpContainerBack").style.display =
+				"none";
+			document.getElementById("signUpContainer").style.width = "0px";
+			document.getElementById("signupForm").reset();
+		});
+
+		// close signup box and open login box
+		$("#alreadMemberLink").on("click", function () {
+			$("#closeSignupBtn").trigger("click");
+			$("#openLoginBox").trigger("click");
+		});
+
+		$("#forgetPasswordLink").on("click", function () {
+			prompt(
+				"Please enter your email that is used to register with us as member.\nIf the email is valid, a password recovery link will be sent to the email.",
+				"example@mail.com"
+			);
+		});
+
+		$("#signupForm").on("submit", function () {
+			if ($("#newuser_pass").val() != $("#newuser_confirmPass").val()) {
+				alert("Password doesnt match.");
+				return false;
+			}
+		});
+    </script>
+    <script>
+    $("#profileIco").on("click", function () {
+        $(".drop-down-container").css(
+            "display",
+            $(".drop-down-container").css("display") == "block"
+                ? "none"
+                : "block"
+        );
+    });
+
+    $(window).on("resize", function () {
+        $(".drop-down-container").css(
+            "right",
+            `${Math.round(
+                window.innerWidth * 0.1 +
+                    (window.innerWidth * 0.8 * 0.25 - 48) / 2
+            )}px`
+        );
+    });
+
+    // Hope this doesnt override on click in popupHandler
+    $("#openLoginBox").on("click", function () {
+        $(".drop-down-container").css("display", "none");
+    });
+
+    $("#openSignupBtn").on("click", function () {
+        $(".drop-down-container").css("display", "none");
+    });
+
+    // If Login was done before hand
+    if (new URLSearchParams(location.search).get("usrname") != null) {
+        let disabled = $(".drop-disabled");
+        let enabled = $(".drop-enabled");
+        enabled.css("display", "none");
+        disabled.addClass("drop-enabled").removeClass("drop-disabled");
+        $("#logOutBtn").css("display", "block");
+        $("#logOutBtn").on("click", function () {
+            alert("You are being logged out.");
+            window.location.href = window.location.href.substring(
+                0,
+                window.location.href.indexOf("?")
+            );
+        });
+        $("#myProfileBtn").on("click", function () {
+            window.location.href = "memberaccount.html";
+        });
+        $("#trackOrderBtn").on("click", function () {
+            window.location.href = "track_order.html";
+        });
+        $("#mycartBtn").on("click", function () {
+            window.location.href = "shoppingCart.html";
+        });
+    }
+    </script>
+</html>
