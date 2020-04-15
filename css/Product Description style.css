@@ -1,7 +1,7 @@
 .double
 {
   display: grid;
-  grid-template-columns: 10fr 0.5fr 2fr;
+  grid-template-columns: 7fr 0.5fr 2fr;
   grid-gap:1em;
 }
 
@@ -17,9 +17,7 @@
    
 }
 
-#border{
-    border: none;
-}
+
 
 .info{
     grid-column: 3;
@@ -123,4 +121,29 @@ form {
     width: 40px;
     height: 40px;
   }
+
+  .cartbuy
+  {
+ font-size: 1.5em;
+ border: #333 1px solid ;
+ padding: 1em;
+  }
+  
+  .cartbuy:hover
+  {
+    color: yellow;
+  }
+
+  #background
+  {
+    background-color:rgba(170, 170, 170, 0.1);
+    border: 1px solid rgb(255, 255, 255);
+    height: 11%;
+   
+  }
+
+  table, th, td {
+    border:#333 1px solid ;
+  }
+
   
