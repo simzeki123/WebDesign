@@ -1,0 +1,100 @@
+.title_contact_us{
+    display: grid;
+    border-top: 3px solid lightskyblue;
+    border-bottom: 3px solid lightskyblue;
+    color: rgba(13, 48, 112, 0.7);
+}
+
+h1{
+    justify-self: center;
+    margin: 0;
+    font-size: 3em;
+}
+
+.contact_catagory_grid{
+    margin-top: 150px;
+    margin-bottom: 100px;
+    margin-left:300px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+    grid-template-rows: 400px;
+    width: 900px;
+}
+
+ul{
+    list-style-type:none;
+}
+
+h2{
+    margin: 0;
+    margin-top: 20px;
+    margin-left:72px;
+}
+
+.store_location_grid{
+border-radius: 20px;
+border-top: 8px solid rgb(68, 68, 136);
+border-bottom: 5px solid rgb(68, 68, 136);
+box-shadow: 2.5px 5px 9px #888888;
+}
+
+.office_location_grid{
+border-radius: 20px;
+border-top: 8px solid rgb(68, 68, 136);
+border-bottom: 5px solid rgb(68, 68, 136);
+box-shadow: 2.5px 5px 9px #888888;
+}
+
+.contact_num_grid{
+border-radius: 20px;
+border-top: 8px solid rgb(68, 68, 136);
+border-bottom: 5px solid rgb(68, 68, 136);
+box-shadow: 2.5px 5px 9px #888888;
+}
+    
+
+a:link , a:visited {
+    text-decoration: none;
+    text-align: center;
+    color: rgb(68, 68, 136);
+    padding: 15px 35px;
+    border: 1.5px solid rgb(68, 68, 136);
+    border-radius: 30px;
+}
+
+a:hover , a:active  {
+    text-decoration: none;
+    text-align: center;
+    color: rgb(142, 142, 192);
+    padding: 15px 35px;
+    border: 1.5px solid rgb(142, 142, 192);
+    border-radius: 30px;
+}
+
+.email_button_1{
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.email_button_2{
+    margin-left: 80px;
+    margin-top: 55px;
+}
+
+.email_button_3{
+    margin-left: 80px;
+    margin-top: 128px;
+}
+
+address{
+    font-size: 1.3em;
+    margin-top: 60px;
+}
+
+p{
+    margin: 0;
+    font-size: 1.3em;
+    padding-top: 50px;
+    margin: center;
+}
