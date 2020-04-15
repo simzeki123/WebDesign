@@ -14,13 +14,14 @@ h1{
 .contact_catagory_grid{
     margin-top: 150px;
     margin-bottom: 100px;
-    margin-left:300px;
+    margin-left:330px;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
     grid-template-rows: 400px;
     width: 900px;
 }
+
 
 ul{
     list-style-type:none;
@@ -90,11 +91,12 @@ a:hover , a:active  {
 address{
     font-size: 1.3em;
     margin-top: 60px;
+    color: rgb(67, 77, 87);
 }
 
 p{
     margin: 0;
     font-size: 1.3em;
     padding-top: 50px;
-    margin: center;
+    color: rgb(67, 77, 87);
 }
