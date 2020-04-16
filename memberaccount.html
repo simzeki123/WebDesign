@@ -3,169 +3,204 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Member Account Page</title>
-        <link rel="stylesheet" href="css/memberaccount.css" />
-        <link rel="stylesheet" href="css/pop_up.css" />
+		<title>Member Account Page</title>
+		<link rel="stylesheet" href="css/memberaccount.css" />
+		<link rel="stylesheet" href="css/pop_up.css" />
 		<link rel="stylesheet" href="css/header.css" />
 	</head>
 	<body>
-        <div class="fullscrnBox" id="loginContainerBack"></div>
+		<div class="fullscrnBox" id="loginContainerBack"></div>
 		<div class="fullscrnBox" id="signUpContainerBack"></div>
-		<header>
-        </header>
-		<div class="page-container">
-			<!-- For profile infos -->
-			<div class="item-l">
-				Hi, <span id="nameInWelcomeMsg">XXX</span>
-				<br />
-				This is your profile page
-				<br />
-				<!-- Full Name -->
-				<div class="subHeader">Full Name</div>
-				<div class="editBtn" id="editFullName">
-					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
-					<span style="padding-left: 5px;">Edit</span>
-				</div>
-				<div class="subHeaderContent fade-me-in" id="fullName">
-					<div class="input-container fade-me-in">
-						<input
-							type="text"
-							value=""
-							id="fullNameInput"
-							onkeyup="fullname_inputFunc(event)"
+		<header></header>
+		<div>
+			<div class="page-container">
+				<!-- For profile infos -->
+				<div class="item-l">
+					Hi, <span id="nameInWelcomeMsg">XXX</span>
+					<br />
+					This is your profile page
+					<br />
+					<!-- Full Name -->
+					<div class="subHeader">Full Name</div>
+					<div class="editBtn" id="editFullName">
+						<img
+							class="icon-edit"
+							src="misc/editIco.png"
+							alt="Edit"
 						/>
-						<br />
-						<div
-							style="font-size: 10px;
-                            text-align: right;
-                            padding-top:5px;"
-						>
-                            Press Shift + Enter to save
-                            <br>
-                            Press ESC to discard changes
+						<span style="padding-left: 5px;">Edit</span>
+					</div>
+					<div class="subHeaderContent fade-me-in" id="fullName">
+						<div class="input-container fade-me-in">
+							<input
+								type="text"
+								value=""
+								id="fullNameInput"
+								onkeyup="fullname_inputFunc(event)"
+							/>
+							<br />
+							<div
+								style="
+									font-size: 10px;
+									text-align: right;
+									padding-top: 5px;
+								"
+							>
+								Press Shift + Enter to save
+								<br />
+								Press ESC to discard changes
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- Delivery Addr -->
-				<div class="subHeader">Delivery Address</div>
-				<div class="editBtn" id="editAddress">
-					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
-					<span style="padding-left: 5px;">Edit</span>
-				</div>
-				<div class="subHeaderContent fade-me-in" id="deliveryAddr">
-					<div class="input-container fade-me-in">
-						<input
-							type="text"
-							id="inp_addr1"
-							value=""
-							placeholder="Address line 1"
-							onkeyup="addr_inputFunc(event)"
+					<!-- Delivery Addr -->
+					<div class="subHeader">Delivery Address</div>
+					<div class="editBtn" id="editAddress">
+						<img
+							class="icon-edit"
+							src="misc/editIco.png"
+							alt="Edit"
 						/>
+						<span style="padding-left: 5px;">Edit</span>
 					</div>
-					<br />
-					<div class="input-container fade-me-in">
-						<input
-							type="text"
-							id="inp_addr2"
-							value=""
-							placeholder="Address line 2 (Optional)"
-							onkeyup="addr_inputFunc(event)"
-						/>
-                    </div>
-                    <br />
-					<div class="input-container fade-me-in">
-						<input
-							type="text"
-							id="inp_addr3"
-							value=""
-							placeholder="Zip Code"
-							onkeyup="addr_inputFunc(event)"
-						/>
-					</div>
-					<br />
-					<div class="input-container fade-me-in">
-						<input
-							type="text"
-							id="inp_addr4"
-							value=""
-							placeholder="City"
-							onkeyup="addr_inputFunc(event)"
-						/>
-					</div>
-					<br />
-					<div class="input-container fade-me-in">
-						<input
-							type="text"
-							id="inp_addr5"
-							value=""
-							placeholder="State"
-							onkeyup="addr_inputFunc(event)"
-						/>
+					<div class="subHeaderContent fade-me-in" id="deliveryAddr">
+						<div class="input-container fade-me-in">
+							<input
+								type="text"
+								id="inp_addr1"
+								value=""
+								placeholder="Address line 1"
+								onkeyup="addr_inputFunc(event)"
+							/>
+						</div>
 						<br />
-						<div
-							style="font-size: 10px;
-                            text-align: right;
-                            padding-top:5px;"
-						>
-                            Press Shift + Enter to save
-                            <br>
-                            Press ESC to discard changes
+						<div class="input-container fade-me-in">
+							<input
+								type="text"
+								id="inp_addr2"
+								value=""
+								placeholder="Address line 2 (Optional)"
+								onkeyup="addr_inputFunc(event)"
+							/>
+						</div>
+						<br />
+						<div class="input-container fade-me-in">
+							<input
+								type="text"
+								id="inp_addr3"
+								value=""
+								placeholder="Zip Code"
+								onkeyup="addr_inputFunc(event)"
+							/>
+						</div>
+						<br />
+						<div class="input-container fade-me-in">
+							<input
+								type="text"
+								id="inp_addr4"
+								value=""
+								placeholder="City"
+								onkeyup="addr_inputFunc(event)"
+							/>
+						</div>
+						<br />
+						<div class="input-container fade-me-in">
+							<input
+								type="text"
+								id="inp_addr5"
+								value=""
+								placeholder="State"
+								onkeyup="addr_inputFunc(event)"
+							/>
+							<br />
+							<div
+								style="
+									font-size: 10px;
+									text-align: right;
+									padding-top: 5px;
+								"
+							>
+								Press Shift + Enter to save
+								<br />
+								Press ESC to discard changes
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- Preferred Payment method -->
-				<div class="subHeader">Preferred payment method</div>
-				<div id="paymentMeth" class="subHeaderContent fade-me-in">
-					<div class="radioBtnContainer">
-						<input type="radio" name="paymentMethod" id="prompt" checked/>
-						<label for="prompt">Prompt on payment</label>
-					</div>
-					<div class="radioBtnContainer">
-						<input type="radio" name="paymentMethod" id="dbCards" />
-						<label for="dbCards">Debit/Credit Card</label>
-					</div>
-					<div class="radioBtnContainer">
-						<input
-							type="radio"
-							name="paymentMethod"
-							id="3rdPartyService"
-						/>
-						<label for="3rdPartyService"
-							>3rd Party Payment service</label
-						>
-					</div>
-				</div>
-				<!-- Contact No -->
-				<div class="subHeader">Contact No:</div>
-				<div class="editBtn" id="editContact">
-					<img class="icon-edit" src="misc/editIco.png" alt="Edit" />
-					<span style="padding-left: 5px;">Edit</span>
-				</div>
-				<div class="subHeaderContent fade-me-in" id="contactNo">
-					<div class="input-container fade-me-in">
-						<input id="inp_contact" type="text" value="" placeholder="Contact No" onkeyup="contact_inputFunc(event)"/>
-						<br />
-						<div
-							style="font-size: 10px;
-                            text-align: right;
-                            padding-top:5px;"
-						>
-                            Press Shift + Enter to save
-                            <br>
-                            Press ESC to discard changes
+					<!-- Preferred Payment method -->
+					<div class="subHeader">Preferred payment method</div>
+					<div id="paymentMeth" class="subHeaderContent fade-me-in">
+						<div class="radioBtnContainer">
+							<input
+								type="radio"
+								name="paymentMethod"
+								id="prompt"
+								checked
+							/>
+							<label for="prompt">Prompt on payment</label>
+						</div>
+						<div class="radioBtnContainer">
+							<input
+								type="radio"
+								name="paymentMethod"
+								id="dbCards"
+							/>
+							<label for="dbCards">Debit/Credit Card</label>
+						</div>
+						<div class="radioBtnContainer">
+							<input
+								type="radio"
+								name="paymentMethod"
+								id="3rdPartyService"
+							/>
+							<label for="3rdPartyService"
+								>3rd Party Payment service</label
+							>
 						</div>
 					</div>
+					<!-- Contact No -->
+					<div class="subHeader">Contact No:</div>
+					<div class="editBtn" id="editContact">
+						<img
+							class="icon-edit"
+							src="misc/editIco.png"
+							alt="Edit"
+						/>
+						<span style="padding-left: 5px;">Edit</span>
+					</div>
+					<div class="subHeaderContent fade-me-in" id="contactNo">
+						<div class="input-container fade-me-in">
+							<input
+								id="inp_contact"
+								type="text"
+								value=""
+								placeholder="Contact No"
+								onkeyup="contact_inputFunc(event)"
+							/>
+							<br />
+							<div
+								style="
+									font-size: 10px;
+									text-align: right;
+									padding-top: 5px;
+								"
+							>
+								Press Shift + Enter to save
+								<br />
+								Press ESC to discard changes
+							</div>
+						</div>
+					</div>
+					<br />
+					<button id="save" disabled onclick="saveButton_event()">
+						Save changes
+					</button>
 				</div>
-				<br />
-				<button id="save" disabled onclick="saveButton_event()">Save changes</button>
-			</div>
-			<!-- For chart and graphs -->
-			<div class="item-r">
+				<!-- For chart and graphs -->
+				<div class="item-r"></div>
 			</div>
 		</div>
 	</body>
 	<script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/memberaccount.js"></script>
-    <script src="js/popupHandler.js"></script>
+	<script src="js/memberaccount.js"></script>
+	<script src="js/popupHandler.js"></script>
 	<script src="js/header.js"></script>
 </html>

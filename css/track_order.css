@@ -10,6 +10,12 @@
     padding: 10px;
 }
 
+
+body {
+    background-color: rgba(92, 194, 187, 0.171);
+}
+
+
 /* Delivery status bar styling */
 .delivery-progress-bar-container {
 	text-align: center;
