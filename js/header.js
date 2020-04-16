@@ -40,15 +40,16 @@ $(document).ready(function () {
 			$(".drop-down-container").css("display", "none");
 		});
 
-		// If Login was done before hand
-		if (new URLSearchParams(location.search).get("usrname") != null) {
+        // If Login was done before hand
+		if (sessionStorage.getItem("login") == "true") {
 			let disabled = $(".drop-disabled");
 			let enabled = $(".drop-enabled");
 			enabled.css("display", "none");
 			disabled.addClass("drop-enabled").removeClass("drop-disabled");
 			$("#logOutBtn").css("display", "block");
 			$("#logOutBtn").on("click", function () {
-				alert("You are being logged out.");
+                alert("You are being logged out.");
+                sessionStorage.setItem("login", false);
 				window.location.href = window.location.href.substring(
 					0,
 					window.location.href.indexOf("?")
