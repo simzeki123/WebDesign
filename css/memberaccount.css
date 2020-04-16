@@ -13,6 +13,8 @@
 	animation-duration: 0.3s;
 }
 
+/* END OF CSS ANIMATIONS */
+
 * {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -34,11 +36,16 @@ body {
 
 .page-container {
     display: grid;
-    margin: 0 auto;
+    margin: 15px auto;
     min-width: 350px;
     max-width: 800px;
 	grid-template-areas: "iteml";
-	padding: 20px;
+    padding: 20px;
+
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color:rgba(92, 194, 187, 0.41);
+    border-radius: 20px;
+    box-shadow: 0px 4px 3px 4px rgba(0, 0, 0, 0.342);
 }
 
 /* Edit Icon styling */
