@@ -1,6 +1,13 @@
 * {
 	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.content {
+    margin: 0 auto;
+    min-width: 400px;
+    max-width: 1366px;
+    padding: 10px;
 }
 
 /* Delivery status bar styling */

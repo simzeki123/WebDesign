@@ -24,18 +24,16 @@ body {
 }
 
 /* Page Container styling */
-.item-r {
-	grid-area: itemr;
-}
-
 .item-l {
 	grid-area: iteml;
 }
 
 .page-container {
-	display: grid;
-	grid-template-areas: "iteml itemr";
-	grid-template-columns: 60% 40%;
+    display: grid;
+    margin: 0 auto;
+    min-width: 350px;
+    max-width: 800px;
+	grid-template-areas: "iteml";
 	padding: 20px;
 }
 

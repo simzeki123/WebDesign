@@ -13,6 +13,14 @@ $(document).ready(function () {
 			);
 		});
 
+        // I will set the margin too on load
+        $(".drop-down-container").css(
+            "right",
+            `${Math.round(
+                window.innerWidth * 0.1 +
+                    (window.innerWidth * 0.8 * 0.25 - 48) / 2
+            )}px`
+        );
 		$(window).on("resize", function () {
 			$(".drop-down-container").css(
 				"right",
