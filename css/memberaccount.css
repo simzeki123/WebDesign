@@ -82,7 +82,7 @@ body {
 	padding-bottom: 5px;
 }
 
-input[type="text"] {
+.page-container input[type="text"] {
 	box-sizing: border-box;
 	width: 100%; /* Parent of input is input-container so its fine */
 	border-radius: 5px;
@@ -91,7 +91,7 @@ input[type="text"] {
 	padding: 5px 8px;
 }
 
-input[type="text"]:focus {
+.page-container input[type="text"]:focus {
 	border: 2px solid rgb(237, 20, 91);
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
