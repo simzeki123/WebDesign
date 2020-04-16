@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <link href="CSS/Layeout.css" rel="stylesheet">
     <link href="CSS/Product Description style.css" rel="stylesheet">
+    <script src="js/plus.js"></script>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/pop_up.css" />
+		<link rel="stylesheet" href="css/header.css" />
     <title>The Snow Globe Product Description</title>
 
 
 
 	<style type="text/css">
-.auto-style1 {
-  margin-left: -3px;
-  margin-top: -50px;
-}
-</style>
+   .auto-style1 {
+    margin-left: -3px;
+    margin-top: -50px;
+   }
+ </style>
 
 
 
 </head>
-<header></header>
-
+<body>
+  <div class="fullscrnBox" id="loginContainerBack"></div>
+	<div class="fullscrnBox" id="signUpContainerBack"></div>
+  <header></header>
+<div class="size">
 <h1>Product Description</h1>
 <div class="double">
 
@@ -55,7 +62,7 @@
     <h3>Creative Birthday Gift Surprise Explosion Box DIY Photo Memory Album Anniversary</h3>
     <p>&#9733;&#9733;&#9733;&#9733;&#9733;&nbsp;5<span class="review"> 396 Reviews</span> </p>
     <p><strong>Brand:</strong>No Brand</p>
-    <h3>Rm 21.70</h3>
+    <h3 style="color: orange;">Rm 21.70</h3>
    
     <form class="auto-style1" style="height: 0px; width: 198px">
       <span style="font-weight: bold; font-size: 1em;">Quantity</span>
@@ -65,7 +72,7 @@
      
     </form>
     <br> <br><br><br>
-     <span class="cartbuy"><strong>Buy Now</strong></span>  &nbsp;&nbsp;&nbsp;<span class="cartbuy"><strong>Add To Cart</strong></span>   
+     <span class="cartbuy" onclick="Buy()"><strong>Buy Now</strong></span>  &nbsp;&nbsp;&nbsp;<span class="cartbuy2"onclick="Add()"><strong>Add To Cart</strong></span>   
   </div>
 
  </div>
@@ -84,7 +91,7 @@
    <p>&#10004;100% Authentic</p>
    <p>&#10004;7 days easy return</p>
    <hr style="border: 1px thin rgba(170, 170, 170, 0.3);">
-   <table>
+   <table style="margin-left: 10%;">
      <tr>
        <td colspan="2">
          <p style="font-size: 0.8em; color: rgba(92, 91, 91, 0.8);">Sold By:</p>
@@ -127,8 +134,11 @@
 </div>
 
 
-
-
+</div>
+</body>
+<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/popupHandler.js"></script>
+	<script src="js/header.js"></script>
 
 
 

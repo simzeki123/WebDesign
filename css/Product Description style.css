@@ -124,15 +124,35 @@ form {
 
   .cartbuy
   {
- font-size: 1.5em;
- border: #333 1px solid ;
- padding: 1em;
+    background-color: rgb(247, 202, 24);
+    color: white;   
+    border: none;      
+    font-size: 1.5em;  
+    padding: 10px; 
+    cursor: pointer;
   }
   
   .cartbuy:hover
   {
-    color: yellow;
+    background-color: rgb(236, 194, 27);
   }
+
+  .cartbuy2
+  {
+    background-color: rgb(247, 113, 24);
+    color: white;   
+    border: none;      
+    font-size: 1.5em;  
+    padding: 10px; 
+    cursor: pointer;
+  }
+  
+  .cartbuy2:hover
+  {
+    background-color: rgb(226, 103, 21);
+  }
+
+
 
   #background
   {
