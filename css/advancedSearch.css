@@ -1,9 +1,17 @@
-html    {
-    min-width: 800px;
-    max-width: 1200px;
-    width: 100%;
-}
+@charset "utf-8";  
+  
+  html,
+  html a {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  }
 
+  body {
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+  }
+  
 .keyword {
     width: 100%;
     font-size: 16px;
@@ -23,10 +31,11 @@ html    {
   }
 
   .advanced_search  {
-    float: right;
+    margin-left: 1200px;
     padding: 12px 20px 12px 20px;
     background-color: rgb(206, 103, 103);
     color: white;
+    text-transform: uppercase;
   }
 
   .advanced_search:hover  {
