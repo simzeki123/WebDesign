@@ -12,3 +12,14 @@ function increaseValue() {
 	value--;
 	document.getElementById('number').value = value;
   }
+
+
+
+
+  function Buy() {
+	alert("Please Try Again Later");
+  }
+
+  function Add() {
+	alert("Product Has Been Added To Cart");
+  }

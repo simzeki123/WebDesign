@@ -5,24 +5,32 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Track my order</title>
 		<link rel="stylesheet" href="css/track_order.css" />
+		<link rel="stylesheet" href="css/pop_up.css" />
+		<link rel="stylesheet" href="css/header.css" />
 		<script src="js/jquery-3.4.1.min.js"></script>
 	</head>
 	<body>
-		<div>
-			Your order: 7
-		</div>
-		<div class="table-container">
-			<table>
-				<thead>
-					<th>#</th>
-					<th>Order Number</th>
-					<th>Item</th>
-					<th>Quantity</th>
-					<th></th>
-				</thead>
-				<script>
-					for (let x = 0; x < 7; x++) {
-						document.write(`
+		<div class="fullscrnBox" id="loginContainerBack"></div>
+		<div class="fullscrnBox" id="signUpContainerBack"></div>
+		<header></header>
+		<div class="content">
+			<div style="width:80%;margin: 0 auto;">
+				<h4>
+					Your order(s): 7
+				</h4>
+			</div>
+			<div class="table-container">
+				<table>
+					<thead>
+						<th>#</th>
+						<th>Order Number</th>
+						<th>Item</th>
+						<th>Quantity</th>
+						<th></th>
+					</thead>
+					<script>
+						for (let x = 0; x < 7; x++) {
+							document.write(`
                         <tr id='row-${x}'>
                             <td>${x}</td>
                             <td>A000${x + 1}</td>
@@ -31,64 +39,67 @@
                             <td><button id="btn-${x}">Track</button></td>
 				        </tr>
                         `);
-					}
-				</script>
-			</table>
+						}
+					</script>
+				</table>
+			</div>
+			<div id="deliveryProgressBack">
+				<div id="sledge-container">
+					<img
+						src="misc/Sledge.png"
+						alt="sledge"
+						style="width: 80px; height: 50px;"
+					/>
+				</div>
+
+				<!-- Both status bar and progress bar and status msg will use the same container to ensure same positioning -->
+				<!-- Delivery progress bar -->
+				<div id="progressBar"></div>
+
+				<div class="delivery-progress-bar-container">
+					<div class="deliery-container-section">
+						<div class="outer-circle" id="progress-1">
+							<div class="inner-circle"></div>
+						</div>
+					</div>
+					<div class="deliery-container-section">
+						<div class="outer-circle" id="progress-2">
+							<div class="inner-circle"></div>
+						</div>
+					</div>
+					<div class="deliery-container-section">
+						<div class="outer-circle" id="progress-3">
+							<div class="inner-circle"></div>
+						</div>
+					</div>
+					<div class="deliery-container-section">
+						<div class="outer-circle" id="progress-4">
+							<div class="inner-circle"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Delivery status msg -->
+				<div class="delivery-progress-bar-container">
+					<div class="deliery-container-section">
+						Ready to be Delivered
+					</div>
+					<div class="deliery-container-section">
+						Picked up by courier
+					</div>
+					<div class="deliery-container-section">
+						Out for delivery
+					</div>
+					<div class="deliery-container-section">Delivered</div>
+				</div>
+				<div style="padding-top: 10px; width: 90%; text-align: right;">
+					Estimated time of delivery: <span id="eta">-</span> days
+				</div>
+			</div>
 		</div>
-		<div id="deliveryProgressBack">
-			<div id="sledge-container">
-				<img
-					src="misc/Sledge.png"
-					alt="sledge"
-					style="width: 80px; height: 50px;"
-				/>
-			</div>
-
-			<!-- Both status bar and progress bar and status msg will use the same container to ensure same positioning -->
-			<!-- Delivery progress bar -->
-			<div id="progressBar"></div>
-
-			<div class="delivery-progress-bar-container">
-				<div class="deliery-container-section">
-					<div class="outer-circle" id="progress-1">
-						<div class="inner-circle"></div>
-					</div>
-				</div>
-				<div class="deliery-container-section">
-					<div class="outer-circle" id="progress-2">
-						<div class="inner-circle"></div>
-					</div>
-				</div>
-				<div class="deliery-container-section">
-					<div class="outer-circle" id="progress-3">
-						<div class="inner-circle"></div>
-					</div>
-				</div>
-				<div class="deliery-container-section">
-					<div class="outer-circle" id="progress-4">
-						<div class="inner-circle"></div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Delivery status msg -->
-			<div class="delivery-progress-bar-container">
-				<div class="deliery-container-section">
-					Ready to be Delivered
-				</div>
-				<div class="deliery-container-section">
-					Picked up by courier
-				</div>
-				<div class="deliery-container-section">
-					Out for delivery
-				</div>
-				<div class="deliery-container-section">Delivered</div>
-            </div>
-            <div style="padding-top: 10px; width: 90%; text-align: right;">
-                Estimated time of delivery: <span id=eta>-</span> days
-            </div>
-        </div>
 	</body>
+	<script src="js/popupHandler.js"></script>
+	<script src="js/header.js"></script>
 	<script>
 		// function for setting status on status bar checkpoints
 		function setBlack(id) {
@@ -106,20 +117,20 @@
 		// rehighlight the checkpoint based on value
 		function updateCheckpointStatus(val) {
 			setGreen(1);
-            $("#eta").html('7');
+			$("#eta").html("7");
 			if (val >= 33) {
 				setGreen(2);
-                $("#eta").html('4');
+				$("#eta").html("4");
 			}
 
 			if (val >= 67) {
 				setGreen(3);
-                $("#eta").html('2');
+				$("#eta").html("2");
 			}
 
 			if (val == 100) {
 				setGreen(4);
-                $("#eta").html('-');
+				$("#eta").html("-");
 			}
 		}
 
@@ -158,7 +169,7 @@
 						"padding-left",
 						`${padding_val}%`
 					);
-                    updateCheckpointStatus(val*2);
+					updateCheckpointStatus(val * 2);
 					// console.log(`val: ${val}, padding_val: ${padding_val}`);
 				}, 500);
 			}, 1000);

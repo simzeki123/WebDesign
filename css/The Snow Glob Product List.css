@@ -51,6 +51,7 @@ font-weight: bold;
 
 .sort
 {
+    padding: 0;
     border:#333 1px solid ;
     font-size: 1.5em;
 	background-color: lightgray;

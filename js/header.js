@@ -13,15 +13,33 @@ $(document).ready(function () {
 			);
 		});
 
+		// I will set the margin too on load
+		$(".drop-down-container").css(
+			"right",
+			// I don't know why, i don't know how, if it works, dont touch it
+			`${Math.round(
+				window.innerWidth * 0.1 +
+					(window.innerWidth * 0.8 * 0.25 - 48) / 2
+			)}px`
+		);
+		// set right margin on window resize to ensure correct position
 		$(window).on("resize", function () {
 			$(".drop-down-container").css(
 				"right",
+				// I don't know why, i don't know how, if it works, dont touch it
 				`${Math.round(
 					window.innerWidth * 0.1 +
 						(window.innerWidth * 0.8 * 0.25 - 48) / 2
 				)}px`
 			);
 		});
+
+		// If searcH_query exist, make sure the search input box have the correct value
+        let params = new URLSearchParams(location.search);
+        if (params.get("search_query") != null)
+        {
+            $("#search_query").val(params.get("search_query"));
+        }
 
 		// Hope this doesnt override on click in popupHandler
 		$("#openLoginBox").on("click", function () {
@@ -33,7 +51,7 @@ $(document).ready(function () {
 		});
 
 		// If Login was done before hand
-		if (new URLSearchParams(location.search).get("usrname") != null) {
+		if (sessionStorage.getItem("login") == "true") {
 			let disabled = $(".drop-disabled");
 			let enabled = $(".drop-enabled");
 			enabled.css("display", "none");
@@ -41,6 +59,7 @@ $(document).ready(function () {
 			$("#logOutBtn").css("display", "block");
 			$("#logOutBtn").on("click", function () {
 				alert("You are being logged out.");
+				sessionStorage.setItem("login", false);
 				window.location.href = window.location.href.substring(
 					0,
 					window.location.href.indexOf("?")

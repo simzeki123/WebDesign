@@ -13,6 +13,8 @@
 	animation-duration: 0.3s;
 }
 
+/* END OF CSS ANIMATIONS */
+
 * {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -23,20 +25,27 @@ body {
 	padding: 0;
 }
 
-/* Page Container styling */
-.item-r {
-	grid-area: itemr;
+body {
+    background-color: rgba(92, 194, 187, 0.171);
 }
 
+/* Page Container styling */
 .item-l {
 	grid-area: iteml;
 }
 
 .page-container {
-	display: grid;
-	grid-template-areas: "iteml itemr";
-	grid-template-columns: 60% 40%;
-	padding: 20px;
+    display: grid;
+    margin: 15px auto;
+    min-width: 350px;
+    max-width: 800px;
+	grid-template-areas: "iteml";
+    padding: 15px;
+
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color:rgba(92, 194, 187, 0.41);
+    border-radius: 20px;
+    box-shadow: 0px 4px 3px 4px rgba(0, 0, 0, 0.342);
 }
 
 /* Edit Icon styling */
@@ -66,7 +75,9 @@ body {
 	display: inline-block;
 	font-weight: bold;
 	line-height: 50px;
-	font-size: 20px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.726);
+    font-family: sans-serif;
 }
 
 .subHeaderContent {
@@ -80,7 +91,7 @@ body {
 	padding-bottom: 5px;
 }
 
-input[type="text"] {
+.page-container input[type="text"] {
 	box-sizing: border-box;
 	width: 100%; /* Parent of input is input-container so its fine */
 	border-radius: 5px;
@@ -89,7 +100,7 @@ input[type="text"] {
 	padding: 5px 8px;
 }
 
-input[type="text"]:focus {
+.page-container input[type="text"]:focus {
 	border: 2px solid rgb(237, 20, 91);
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }

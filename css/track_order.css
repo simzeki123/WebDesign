@@ -1,7 +1,20 @@
 * {
 	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
+.content {
+    margin: 0 auto;
+    min-width: 400px;
+    max-width: 1366px;
+    padding: 10px;
+}
+
+
+body {
+    background-color: rgba(92, 194, 187, 0.171);
+}
+
 
 /* Delivery status bar styling */
 .delivery-progress-bar-container {
@@ -88,11 +101,16 @@ tr {
     transition: background-color .5s;
 }
 
+tbody tr {
+    background-color: rgb(255,255,255,0.5);
+}
+
 tr:hover {
+    position: relative;
     box-shadow: 3px 3px 6px -3px rgba(0,0,0,0.7);
 }
 
-thead {
+thead tr th{
     background-color: rgb(240, 72,51);
     color: white;
 }
