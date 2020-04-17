@@ -11,9 +11,14 @@ img{
 
 .header_grid{
     display: grid;
-    background-color: springgreen;
+    border:3px solid royalblue;
     grid-column: 1/5;
     align-self: center;
+    background-image: url("../misc/cu_header.png");
+}
+
+div{
+    border-radius: 10px;
 }
 
 h1{
@@ -21,16 +26,25 @@ h1{
     align-self: center;
     justify-self: center;
 }
+
+h2{
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
 /*STORY*/
 .story_grid{
-background-color: royalblue;
 grid-column: 1/5;
 justify-self: left;
+height: 250px;
+box-shadow: 5px 10px 18px #888888;
+background-image: url("../misc/div_background.jpg");
 }
 
 .story_grid>img{
 float: left;
-width: 300px;
+width: 159px;
 height: 180px;
 }
 
@@ -40,15 +54,17 @@ height: 180px;
 
 /*MOTTO*/
 .motto_grid{
-    background-color: rgb(158, 86, 34);
-    height: 300px;
+    height: 250px;
     justify-self: right;
     grid-column:1/5; 
+    width: 900px;
+    box-shadow: 5px 10px 18px #888888;
+    background-image: url("../misc/div_background.jpg");
 }
 
 .motto_grid>img{
     float: right;
-    width: 300px;
+    width: 180px;
     height: 180px;
 }
 
@@ -58,14 +74,17 @@ height: 180px;
 
 /*AIMS*/
 .aim_grid{
-background-color: salmon;
 grid-column: 1/5;
 justify-self: left;
+height: 250px;
+box-shadow: 5px 10px 18px #888888;
+background-image: url("../misc/div_background.jpg");
+background-size: 100%;
 }
 
 .aim_grid>img{
     float: left;
-    width: 300px;
+    width: 340px;
     height: 180px;
     }
     
