@@ -1,90 +1,180 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Shopping Cart</title>
-        <link href="css/shoppingCart.css" rel="stylesheet" type="text/css" />
-    </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>shopping Cart</title>
+    <link href="css/shoppingCart.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/pop_up.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
 
-    <body>
-        <header>
-        </header>
-
-        <h1>YOUR CART</h1>
-        <div class="allProduct">
-            <div class="product">
-                 <div class="checkBox">
-                    <input type="checkbox" name="slctItem" id="slctItem" />
-                </div>
-
-                <div class="productImg">
-                    <img src="misc/product.jpg" alt="productImg" />
-                </div>
-
-                 <div class="productDetails">
-                      <div class="productName"><b>Product Name</b> : Chirstmas Snow Globe<br><br></div>
-                      <p class="productDes"><b>Product Description</b> : The craftsmanship of this piece is superb, this piece is made of resin
-                      </p>
-                </div>
-                
-                <div class="productAmount">
-                    <div class="productPrice">
-                          <b>Price</b> : RM 30.00<br><br>
-                    </div>
-                    
-                    <div class="productQty">
-                        <b>Quantity</b>: <input type="number" name="qty" id="qty" min="1" /><br><br>
-                     </div>    
-                
-                    <div class="removeProduct">
-                         <button class="removeProduct">REMOVE</button> 
-                    </div>
-                </div>
-
-                <div class="orderSummary">
-                    <div class="container">
-                        <h2>Order Summary <span class="price" style="color:black"></span></h2>
-                        <p>Subtotal <span class="price">RM 60.00</span></p>
-                        <p>Shipping Fee <span class="price">RM 3.00</span></p>
-                        <p>Tax Rate <span class="price">RM 6.00</span></p>
-                        <hr>
-                        <p>Total Amount <span class="price" style="color:black"><b>RM 69.00</b></span></p>
-                        <button class="checkout"
-                            onclick="document.location = 'paymentDetails.html'">Proceed to Checkout</button>
-                    </div>
-                </div>
-
-                <div class="checkBox">
-                     <input type="checkbox" name="slctItem" id="slctItem" />
-                 </div>
-    
-                <div class="productImg">
-                    <img src="misc/product.jpg" alt="productImg" />
-                </div>
-    
-                <div class="productDetails">
-                    <div class="productName"><b>Product Name</b> : Chirstmas Snow Globe<br><br></div>
-                    <p class="productDes"><b>Product Description</b> : The craftsmanship of this piece is superb, this piece is made of resin
-                    </p>
-                </div>
-                    
-                <div class="productAmount">
-                    <div class="productPrice">
-                        <b>Price</b> : RM 30.00<br><br>
-                    </div>
-                        
-                    <div class="productQty">
-                        <b>Quantity</b>: <input type="number" name="qty" id="qty" min="1" /><br><br>
-                    </div>    
-                    
-                    <div class="removeProduct">
-                        <button class="removeProduct" onclick="">REMOVE</button> 
-                    </div>
-                </div>
-            </div>
+<body>
+    <header></header>
+  <main>
+    <div class="cart-title">Your Cart</div>
+    <div class="basket">
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price">Price</li>
+          <li class="quantity">Quantity</li>
+          <li class="subtotal">Subtotal</li>
+        </ul>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="misc/gift10.jpg" alt="product image" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><b>Product Name : </b>Personalized Photo Leather Wallet for Men</h1>
+            <p><b>Product Description : 
+            </b>The background of the image would be removed, leaving only the subject of the photo on the wa...</p>
+          </div>
         </div>
-        
-        <footer></footer>
+        <div class="price">195.00</div>
+        <div class="quantity">
+          <input type="number" value="2" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">390.00</div>
+        <div class="remove">
+          <button>Remove</button>
+        </div>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="misc/gift14.png" alt="product image" class="product-frame">
+          </div>
+          <div class="product-details">
+              <h1><b>Product Name : </b>For Him Gift Set 04</h1>
+              <p><b>Product Description : </b>
+                1 x pine wood box,1 x "Hero" ceramic mug with lid and spoon,1 x double-tier rice box conta...</p>
+          </div>
+        </div>
+        <div class="price">178.00</div>
+        <div class="quantity">
+          <input type="number" value="3" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">534.00</div>
+        <div class="remove">
+          <button>Remove</button>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items">Order Summary</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Subtotal</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">924.00</div>
+          <div class="shippingfee-title">Shipping Fee</div>
+          <div class="shippingfee-value">5.00</div>
+          <div class="taxrate-title">Tax Rate (5%)</div>
+          <div class="taxrate-value final-value" id="basket-taxrate">46.20</div>
+        </div>
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">975.20</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta" onclick="document.location='paymentDetails.html'">
+            Proceed to Checkout with Credit/Debit Card</button>
+          <button class="checkout-cta" onclick="document.location='paymentDetails_3PP.html'">
+            Proceed to Checkout with 3rd Party Payment</button>
+  
+        </div>
+      </div>
+    </aside>
+  </main>
+  
+  <script src="js/popupHandler.js"></script>
+  <script src="js/header.js"></script>
+  <script>
+    /* Set values + misc */
+    var fadeTime = 300;
+
+    /* Assign actions */
+    $('.quantity input').change(function() {
+    updateQuantity(this);
+    });
+
+    $('.remove button').click(function() {
+    removeItem(this);
+    });
+
+    $(document).ready(function() {
+    updateSumItems();
+    });
+
+    /* Recalculate cart */
+    function recalculateCart(onlyTotal) {
+    var subtotal = 0;
+    var shippingFee = 5.00;
+    var taxRate = 0;
+
+    /* Sum up row totals */
+    $('.basket-product').each(function() {
+        subtotal += parseFloat($(this).children('.subtotal').text());
+        taxRate = subtotal * 0.05;
+    });
+
+    /* Calculate totals */
+    var total = subtotal + shippingFee + taxRate;
     
-    </body>
+    /*If switch for update only total, update only total display*/
+    if (onlyTotal) {
+        /* Update total display */
+        $('.total-value').fadeOut(fadeTime, function() {
+        $('#basket-total').html(total.toFixed(2));
+        $('.total-value').fadeIn(fadeTime);
+        });
+    } else {
+        /* Update summary display. */
+        $('.final-value').fadeOut(fadeTime, function() {
+        $('#basket-subtotal').html(subtotal.toFixed(2));
+        $('#basket-taxrate').html(taxRate.toFixed(2));
+        $('#basket-total').html(total.toFixed(2));
+        if (total == 0) {
+            $('.checkout-cta').fadeOut(fadeTime);
+        } else {
+            $('.checkout-cta').fadeIn(fadeTime);
+        }
+        $('.final-value').fadeIn(fadeTime);
+        });
+    }
+    }
+
+    /* Update quantity */
+    function updateQuantity(quantityInput) {
+    /* Calculate line price */
+    var productRow = $(quantityInput).parent().parent();
+    var price = parseFloat(productRow.children('.price').text());
+    var quantity = $(quantityInput).val();
+    var linePrice = price * quantity;
+
+    /* Update line price display and recalc cart totals */
+    productRow.children('.subtotal').each(function() {
+        $(this).fadeOut(fadeTime, function() {
+        $(this).text(linePrice.toFixed(2));
+        recalculateCart();
+        $(this).fadeIn(fadeTime);
+        });
+    });
+
+    }
+
+    /* Remove item from cart */
+    function removeItem(removeButton) {
+    /* Remove row from DOM and recalc cart total */
+    var productRow = $(removeButton).parent().parent();
+    productRow.slideUp(fadeTime, function() {
+        productRow.remove();
+        recalculateCart();
+        updateSumItems();
+    });
+}
+</script>
+</body>
 </html>

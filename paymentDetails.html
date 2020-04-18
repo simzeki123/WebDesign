@@ -4,24 +4,27 @@
         <meta charset="UTF-8">
         <title>Payment Details</title>
         <link href="css/paymentDetails.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/pop_up.css" />
+        <link rel="stylesheet" href="css/header.css" />
+        <script src="js/jquery-3.4.1.min.js"></script>
     </head>
 
     <body>
         <header></header>
-
+        
         <div class="row">
             <div class="col-50">
               <div class="container">
-                <form>
+                <form name="form" onsubmit="return validation()">
                     <div class="row">
                           <div class="col-30">
                             <h2>Payment Details</h2>
                             <label for="fname">Accepted Cards</label>
                             <img src="misc/creditcard.gif" alt="creditcard_icon" />
-                            <label for="fname">*Name on Card</label>
-                            <input type="text" id="cname" name="cardname" placeholder="Koay Teng Hung" required>
+                            <label for="cname">*Name on Card</label>
+                            <input type="text" id="cname" name="cname" placeholder="Koay Teng Hung" required>
                             <label for="cnum">*Card Number</label>
-                            <input type="text" id="cnum" name="cardnum" placeholder="1111-2222-3333-4444" required>
+                            <input type="text" id="cnum" name="cnum" placeholder="1111-2222-3333-4444" required>
                             <label for="epxmonth">*Exp Month</label>
                             <input type="text" id="expmonth" name="expmonth" placeholder="10" required>
                             <label for="expyear">*Exp Year</label>
@@ -30,21 +33,103 @@
                             <input type="text" id="cvv" name="cvv" placeholder="246" required>
                           </div>
                     </div>
-                  <input type="submit" value="Submit Payment" class="btn">
+                  <input type="submit" value="Submit Payment" class="btn" />
                 </form>
               </div>
             </div>
 
             <div class="col-25">
-              <div class="container">
-                <h2>Order Summary <span class="price" style="color:black"></span></h2>
-                <p>Subtotal <span class="price">RM 60.00</span></p>
-                <p>Shipping Fee <span class="price">RM 3.00</span></p>
-                <p>Tax Rate <span class="price">RM 6.00</span></p>
-                <hr>
-                <p>Total Amount <span class="price" style="color:black"><b>RM 69.00</b></span></p>
-              </div>
+              <div class="summary">
+                <div class="summary-total-items">Order Summary</div>
+                
+                <div class="summary-subtotal">
+                  <div class="subtotal-title">Subtotal</div>
+                  <div class="subtotal-value final-value" id="basket-subtotal">924.00</div>
+                  <div class="shippingfee-title">Shipping Fee</div>
+                  <div class="shippingfee-value">5.00</div>
+                  <div class="taxrate-title">Tax Rate (5%)</div>
+                  <div class="taxrate-value final-value" id="basket-taxrate">46.20</div>
+                </div>
+                
+                <div class="summary-total">
+                  <div class="total-title">Total</div>
+                  <div class="total-value final-value" id="basket-total">975.20</div>
+                </div>
             </div>
         </div>
+        
+        <script src="js/popupHandler.js"></script>
+        <script src="js/header.js"></script>
+        <script>
+          function validation()
+          {
+            var name = document.form.cname.value;
+            if(!isNaN(name))
+            {
+            alert("Please Enter Only Characters On Name Field");
+            document.form.cname.select();
+            return false;
+            }
+
+            var cardNum = document.form.cnum.value;
+            if(isNaN(cardNum))
+            {
+              alert("Please Enter Only Numeric value on the Card Number Field");
+              document.form.cnum.select();
+              return false;
+            }
+            if(cardNum.length != 16)
+            {
+              alert("Please Enter the Correct Card Number");
+              return false;
+            }
+
+            var expMonth = document.form.expmonth.value;
+            if(isNaN(expMonth))
+            {
+              alert("Please Enter Only Numeric value on the Exp Month Field");
+              document.form.expmonth.select();
+              return false;
+            }
+            if((expMonth > 12) || (expMonth < 1))
+            {
+              alert("Please Enter the Correct Exp Month");
+              document.form.expmonth.select();
+              return false;
+            }
+            
+            var expYear =document.form.expyear.value;
+            if(isNaN(expYear))
+            {
+              alert("Please Enter Only Numeric value on the Exp Year Field");
+              document.form.expyear.select();
+              return false;
+            }
+            if(expYear.length != 2)
+            {
+              alert("Please Enter the Correct Exp Month");
+              document.form.expyear.select();
+              return false;
+            }
+
+            var cvvNum = document.form.cvv.value;
+            if(isNaN(cvvNum))
+            {
+              alert("Please Enter Only Numeric value on the CVV Field");
+              document.form.cvv.select();
+              return false;
+            }
+            if(cvvNum.length != 3)
+            {
+              alert("Please Enter the correct CVV");
+              document.form.cvv.select();
+              return false;
+            }
+            else
+            {
+              alert("Payment Successful !!!");
+            }
+          }
+        </script>
     </body>
 </html>

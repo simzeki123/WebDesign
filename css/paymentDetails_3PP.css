@@ -107,7 +107,10 @@ body {
     content: 'RM ';
   }
   
-  input[type=text] {
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=tel] {
     width: 500px;
     margin-bottom: 20px;
     padding: 12px;
