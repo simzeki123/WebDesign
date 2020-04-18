@@ -31,11 +31,12 @@
   }
 
   .advanced_search  {
-    margin-left: 1200px;
+    margin-left: 1190px;
     padding: 12px 20px 12px 20px;
     background-color: rgb(206, 103, 103);
     color: white;
     text-transform: uppercase;
+    margin-bottom: 20px;
   }
 
   .advanced_search:hover  {
