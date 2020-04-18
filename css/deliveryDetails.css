@@ -1,7 +1,7 @@
 @charset "utf-8";  
   
   html,
-  html a {
+  .container a {
     -webkit-font-smoothing: antialiased;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   }
@@ -42,7 +42,7 @@
 
 }
 
-a   {
+.container a   {
     font-size: x-large;
 }
 

@@ -107,7 +107,7 @@ body {
     content: 'RM ';
   }
   
-  input[type=text] {
+  .row input[type=text] {
     width: 500px;
     margin-bottom: 20px;
     padding: 12px;
