@@ -1,11 +1,13 @@
-
+body{
+    background-color: rgba(92, 194, 187, 0.171);
+}
 
 .title_contact_us{
     display: grid;
     border-top: 3px solid lightskyblue;
     border-bottom: 3px solid lightskyblue;
     color: rgba(13, 48, 112, 0.7);
-    background-color:rgba(238, 234, 234, 0.822);
+    background-color:rgba(238, 234, 234, 0.922);
 }
 
 h1{

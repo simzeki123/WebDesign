@@ -1,10 +1,6 @@
-/*
-Need to add styles to:
-1.alltext
-2.background colours
-May add:
-1.shadow when hover over product
-*/
+body{
+    background-color: rgba(92, 194, 187, 0.171);
+}
 
 .welcome_img_grid{
 margin: 0;

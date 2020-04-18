@@ -1,3 +1,8 @@
+
+body{
+    background-color: rgba(92, 194, 187, 0.171);
+}
+
 .layout_grid
 {
 display: grid;
@@ -12,6 +17,7 @@ img{
 .header_grid{
     display: grid;
     border:3px solid royalblue;
+    margin-bottom: 20px;
     grid-column: 1/5;
     align-self: center;
     background-image: url("../misc/cu_header.png");
@@ -28,7 +34,7 @@ h1{
 }
 
 h2{
-    background-color: white;
+    background-image: url("../misc/cu_header.png");
     border: 1px solid red;
     border-radius: 4px;
 }
@@ -49,7 +55,7 @@ height: 180px;
 }
 
 .story_grid>p{
-    font-size:1.5em;
+    font-size:1.3em;
 }
 
 /*MOTTO*/
@@ -89,5 +95,5 @@ background-size: 100%;
     }
     
 .aim_grid>p{
-     font-size:1.5em;
+     font-size:1.3em;
 }
