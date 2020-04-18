@@ -8,12 +8,12 @@ May add:
 
 .welcome_img_grid{
 margin: 0;
-background-color: rgb(185, 94, 94);
+background-color:rgba(247, 86, 86, 0.7);
 width: 1600px;
+border-top: 3px solid black;
 }
 
 .welcome_img_grid>img{
-background-color: rgb(209, 194, 194);
 justify-self: center;
 width: 1200px;
 margin-left: 185px;

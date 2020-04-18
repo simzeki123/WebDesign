@@ -5,6 +5,7 @@
     border-top: 3px solid lightskyblue;
     border-bottom: 3px solid lightskyblue;
     color: rgba(13, 48, 112, 0.7);
+    background-color:rgba(238, 234, 234, 0.822);
 }
 
 h1{
@@ -25,7 +26,7 @@ h1{
 }
 
 
-ul{
+.contact_catagory_grid * ul{
     list-style-type:none;
 }
 
@@ -57,7 +58,7 @@ box-shadow: 2.5px 5px 9px #888888;
 }
     
 
-a:link , a:visited {
+.contact_catagory_grid * a:link , a:visited {
     text-decoration: none;
     text-align: center;
     color: rgb(68, 68, 136);
@@ -66,7 +67,7 @@ a:link , a:visited {
     border-radius: 30px;
 }
 
-a:hover , a:active  {
+.contact_catagory_grid * a:hover , a:active  {
     text-decoration: none;
     text-align: center;
     color: rgb(142, 142, 192);
@@ -82,12 +83,12 @@ a:hover , a:active  {
 
 .email_button_2{
     margin-left: 80px;
-    margin-top: 55px;
+    margin-top: 30px;
 }
 
 .email_button_3{
     margin-left: 80px;
-    margin-top: 128px;
+    margin-top: 100px;
 }
 
 address{
@@ -96,7 +97,7 @@ address{
     color: rgb(67, 77, 87);
 }
 
-p{
+.contact_catagory_grid * p{
     margin: 0;
     font-size: 1.3em;
     padding-top: 50px;

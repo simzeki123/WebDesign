@@ -11,10 +11,12 @@ footer a{
 footer{
     background-color:rgba(238, 234, 234, 0.822);
     margin: 0px;
+    margin-top: 50px;
     border: none;
     padding:0px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    border-top: 2px solid rgb(99, 158, 182);
 }
 
 /* Footer links */

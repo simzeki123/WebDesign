@@ -2,27 +2,28 @@
 1.add javascrips
 */
 
-body{
-    width: 1400px;
-    height: 1000px;
-}
+
 
 /*global_feedback_grid*/
 
 .global_feedback_grid{
-    width: 1400px;
-    height: 1000px;
     display: grid;
 }
 
 
 /*Titles*/
+.feedback_title_grid{
+    display: grid;
+    border-top: 3px solid black;
+    margin-bottom: 20px;
+}
 
 h1{
 margin: 0;
 font-size: 3em;
 justify-self: center;
 align-self:start;
+color: rgb(45, 80, 112);
 }
 
 h2{
@@ -34,14 +35,15 @@ h2{
 }
 
 /*Image of feedback*/
-img{
+.global_feedback_grid > img{
     justify-self: center;
     align-self:start;
-    margin-top:-100px;
 }
 
 /*Feedback radio box*/
 .feedback_radio_grid{
+margin-top: 30px;
+margin-bottom: 20px;
 background-color: rgba(161, 175, 180, 0.4);
 box-sizing: border-box;
 border: 4px solid rgb(142, 178, 231);
@@ -49,7 +51,6 @@ border-radius: 8px;
 width: 220px;
 height: 250px;
 justify-self: center;
-margin-top:-100px;
 }
 
 
@@ -60,7 +61,7 @@ margin-top:-100px;
 }
 
 
-input[type='radio'] {
+.global_feedback_grid * input[type='radio'] {
     transform: scale(1.5);
     align-self: center;
 }
@@ -71,8 +72,8 @@ justify-self: center;
 align-self: flex;
 margin-left: 50px;
 position: relative;
-top: -100px;
 }
+
 textarea{
 width:500px;
 height: 200px;
