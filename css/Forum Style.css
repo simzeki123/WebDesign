@@ -6,6 +6,11 @@
 }
 
 
+body {
+  background-color: rgba(92, 194, 187, 0.171);
+}
+
+
 .nested{
 display: grid;    
 grid-gap:1em;
@@ -19,12 +24,12 @@ padding:1em;
 }
 
 .nested .grey{
-    border-left: 6px solid grey;
+    border-left: 6px solid rgb(255, 0, 0);
     height: auto;
     
 }
 .nested .pink{
-    border-left: 6px solid pink;
+    border-left: 6px solid rgb(255, 153, 0);
     height:auto;
 }
 
@@ -55,11 +60,11 @@ div ul li span{
 
 
  div ul.sPink{
-    color: pink;
+    color: rgb(255, 153, 0);
  } 
 
  div ul.sGrey{
-    color: grey;
+    color:rgb(255, 0, 0);
  } 
 
  div ul.sGold{
@@ -67,7 +72,7 @@ div ul li span{
     color: gold;
  } 
 
-.size img{
+ .size img{
     border-radius: 60%;
     width: 50px;
     }
@@ -109,7 +114,7 @@ div ul li span{
   .blink:hover
   {
 
-    border: rgb(255, 255, 255) 1px solid;
+    border: rgb(54, 140, 197) 1px solid;
   }
 
  
