@@ -109,10 +109,10 @@
 			$(`#progress-${id} .inner-circle`).css("background-color", "black");
 		}
 		function setGreen(id) {
-			$(`#progress-${id}`).css("border", "2px solid rgb(0,255,0)");
+			$(`#progress-${id}`).css("border", "2px solid rgba(0, 225, 0)");
 			$(`#progress-${id} .inner-circle`).css(
 				"background-color",
-				"rgb(0,255,0)"
+				"rgba(0, 225, 0)"
 			);
 		}
 
@@ -155,7 +155,7 @@
 			setTimeout(function () {
 				$("#progressBar").css(
 					"background-image",
-					"linear-gradient(to right, lime 0%, lime " +
+					"linear-gradient(to right, rgba(0, 225, 0) 0%, rgba(0, 225, 0) " +
 						val +
 						"%, black " +
 						val +
