@@ -48,6 +48,10 @@ body {
     box-shadow: 0px 4px 3px 4px rgba(0, 0, 0, 0.342);
 }
 
+.page-container:last-of-type {
+    margin-bottom: 100px;
+}
+
 /* Edit Icon styling */
 [class^="icon"] {
 	width: 20px;
