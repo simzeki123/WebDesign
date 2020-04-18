@@ -9,7 +9,7 @@ footer a{
 }
 
 footer{
-    background-color:rgba(158, 154, 154, 0.7);
+    background-color:rgba(238, 234, 234, 0.822);
     margin: 0px;
     border: none;
     padding:0px;
@@ -34,26 +34,19 @@ footer{
     font-size: 1.3em;
 }
 
-.footer_links>li>:link{
+.footer_links>li>:visited,.footer_links>li>:link{
     color: rgba(156, 139, 151,0.8);
 }
 
-.footer_links>li>:visited{
-    color: rgb(156, 40, 118)
-}
-
-.footer_links>li>:hover{
+.footer_links>li>:hover,.footer_links>li>:active{
     color: rgb(192, 91, 158);
-}
-
-.footer_links>li>:active{
-    color: green;   
 }
 
 /*Company name and motto*/
 .footer_title_grid{
     display: grid;
     grid-template-columns: 3fr 1fr;
+    color: rgb(71, 63, 63);
     justify-items: center;
 }
 
@@ -78,7 +71,9 @@ footer{
 
 .footer_contacts>ul>li{
     list-style-type: none;
+    color: rgb(128, 115, 115);
 }
+
 
 .footer_contacts{
     display: grid;
@@ -90,4 +85,5 @@ footer{
     display: grid;
     justify-self: center;
     margin: 0;
+    color: rgb(71, 63, 63);
 }
