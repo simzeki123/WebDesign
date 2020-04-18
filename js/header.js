@@ -1,6 +1,8 @@
 $(document).ready(function () {
 	// load the component using async ajax call
-	$("header").load("components/header.html");
+    $("header").load("components/header.html");
+    $("footer").load("components/footer.html");
+    
 
 	// when all ajax call had been completed
 	$(document).ajaxStop(function () {
