@@ -33,24 +33,21 @@
                 
                     <form class="feedback_radio">
 
-                        <input type="radio" id="website" name="options" value="website">
+                        <input type="radio" id="website" name="options" value="website" checked="checked">
                         <label for="website"> WebSite </label><br>
                         <input type="radio" id="delivery" name="options" value="delivery">
                         <label for="delivery"> Delivery </label><br>
                         <input type="radio" id="shop" name="options" value="shop">
                         <label for="shop"> Physical shop </label><br>
-
+                        
                     </form>
             </nav>
 
-            <nav class="text_box_grid">
-                <textarea></textarea>
+        <form class="text_box_grid"  action="/action_page.php">       
+            <textarea maxlength="500" placeholder="Type your message here..." required></textarea>
 
-               
-                <input type="button" id="feedback_submit" value="Submit" class="submit_button" style="margin-top: -54px;">
-                
-
-            </nav>
+            <input type="submit" class="submit_button" style="margin-top: -54px;">
+        </form>
 
     </nav>
 <footer></footer>

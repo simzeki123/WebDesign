@@ -76,14 +76,13 @@ box-shadow: 2.5px 5px 9px #888888;
 .text_box_grid{
 justify-self: center;
 align-self: flex;
-margin-left: 50px;
+margin-left: 170px;
 position: relative;
 }
 
 textarea{
 width:500px;
 height: 200px;
-resize: none;
 box-sizing: border-box;
 border: 2px solid rgb(142, 178, 231);
 border-radius: 4px;
