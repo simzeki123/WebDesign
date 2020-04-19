@@ -1,9 +1,9 @@
 $(document).ready(function () {
 	// load the component using async ajax call
 	$("header").load("components/header.html", function (res, text, request) {
-        console.log(res);
-        console.log(text);
-        console.log(request);
+        // console.log(res);
+        // console.log(text);
+        // console.log(request);
 		if (text == "error") {
 			$("header").html(
 				"AJAX request to local resource was blocked. Did you deploy the website on a server ?"
