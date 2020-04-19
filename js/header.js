@@ -1,16 +1,19 @@
 $(document).ready(function () {
 	// load the component using async ajax call
 	$("header").load("components/header.html", function (res, text, request) {
+        console.log(res);
+        console.log(text);
+        console.log(request);
 		if (text == "error") {
 			$("header").html(
-				"AJAX request Failed. Did you deploy the website on a server ?"
+				"AJAX request to local resource was blocked. Did you deploy the website on a server ?"
 			);
 		}
 	});
 	$("footer").load("components/footer.html", function (res, text, request) {
 		if (text == "error") {
 			$("footer").html(
-				"AJAX request Failed. Did you deploy the website on a server ?"
+				"AJAX request to local resource was blocked. Did you deploy the website on a server ?"
 			);
 		}
 	});
@@ -89,3 +92,4 @@ $(document).ready(function () {
 		}
 	});
 });
+
