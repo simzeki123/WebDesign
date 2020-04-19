@@ -1,8 +1,19 @@
 $(document).ready(function () {
 	// load the component using async ajax call
-    $("header").load("components/header.html");
-    $("footer").load("components/footer.html");
-    
+	$("header").load("components/header.html", function (res, text, request) {
+		if (text == "error") {
+			$("header").html(
+				"AJAX request Failed. Did you deploy the website on a server ?"
+			);
+		}
+	});
+	$("footer").load("components/footer.html", function (res, text, request) {
+		if (text == "error") {
+			$("footer").html(
+				"AJAX request Failed. Did you deploy the website on a server ?"
+			);
+		}
+	});
 
 	// when all ajax call had been completed
 	$(document).ajaxStop(function () {
@@ -37,11 +48,10 @@ $(document).ready(function () {
 		});
 
 		// If searcH_query exist, make sure the search input box have the correct value
-        let params = new URLSearchParams(location.search);
-        if (params.get("search_query") != null)
-        {
-            $("#search_query").val(params.get("search_query"));
-        }
+		let params = new URLSearchParams(location.search);
+		if (params.get("search_query") != null) {
+			$("#search_query").val(params.get("search_query"));
+		}
 
 		// Hope this doesnt override on click in popupHandler
 		$("#openLoginBox").on("click", function () {
