@@ -16,7 +16,6 @@ footer{
     padding:0px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    border-top: 2px solid rgb(99, 158, 182);
 }
 
 /* Footer links */
