@@ -3,6 +3,7 @@
 		sans-serif;
 }
 
+/* CSS Animation */
 @keyframes slideIn {
 	0% {
 		transform: translateY(1rem);
@@ -27,6 +28,8 @@ body {
 	padding: 0;
 	margin: 0;
 }
+
+/* Header Styling */
 header {
 	padding: 10px 10%;
 	display: grid;
@@ -48,12 +51,14 @@ header div {
 	display: inline-block;
 }
 
+/* Search Container styling */
 .search-container {
 	padding: 5px 0;
 }
 
 .search-container input {
-	width: 80%;
+    /* This input box will be contained in a styled form, check in header.html */
+    width: 100%;
 	box-sizing: border-box;
 	height: 40px;
 	padding: 0 20px;
@@ -88,6 +93,7 @@ header div {
 		brightness(85%) contrast(88%);
 }
 
+/* Profile Logo and drop down styling */
 .profile-logo:hover {
 	cursor: pointer;
 }
