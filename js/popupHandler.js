@@ -73,7 +73,8 @@ $(document).ready(function () {
 			if ($("#newuser_pass").val() != $("#newuser_confirmPass").val()) {
 				alert("Password doesnt match.");
 				return false;
-			}
+            }
+            sessionStorage.setItem("login", true);
 		});
 	});
 });
